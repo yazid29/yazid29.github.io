@@ -1,0 +1,55 @@
+header {
+    height: 110vh;
+    padding-top: 4.7rem;
+    overflow: hidden;
+}
+
+.header_container {
+    text-align: center;
+    height: 100%;
+    position: relative;
+}
+
+.CVcontact {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.header_social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -50px;
+    gap: 0.8rem;
+    bottom: 0;
+}
+
+.header_social::after {
+    content: "";
+    width: 1px;
+    height: 2.5rem;
+    background: var(--color-bg-variant3);
+}
+
+.me {
+    border-radius: 12rem 12rem 12rem 0;
+    background: var(--color-bg-variant3);
+    border: 3px solid var(--color-lightgray);
+    width: 17rem;
+    height: 17rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 2.5rem;
+}
+
+.scroll_down {
+
+    position: absolute;
+    right: -5rem;
+    bottom: 3.5rem;
+    transform: rotate(90deg);
+}

@@ -5,7 +5,7 @@ import Me from '../../assets/foto1.png'
 import HeaderSocials from "./HeaderSocials";
 const Header = () => {
     return (
-        <header>
+        <header id="home">
             <div className="container header_container">
                 <h5>Hai Saya,</h5>
                 <h1>Ahmad Yazid Munif</h1>
@@ -14,9 +14,11 @@ const Header = () => {
                 </h5>
                 <CVcontact />
                 <div className="me">
-                    <HeaderSocials />
                     <img src={Me} alt="me" />
-                    <a href="#contact" className="scroll_down">Scroll Down</a>
+                    <HeaderSocials />
+                </div>
+                <div >
+                    <a href="#contact" className="scroll_down">Scroll Down <div className="triangle-right"></div></a>
                 </div>
             </div>
         </header>

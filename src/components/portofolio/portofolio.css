@@ -1,1 +1,26 @@
+.portofolio_content {
+    /* width: 400px; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* display: flex;
+    flex-wrap: wrap; */
+    gap: 2rem;
+    /* justify-content: space-evenly; */
+}
 
+.portofolio_item {
+    padding: 1.1rem;
+    border-radius: 2rem;
+    border: 1px solid var(--color-bg-variant3);
+    background: var(--color-bg-variant2);
+    text-align: center;
+}
+
+.portofolio_item:hover {
+    background: var(--color-bg-variant4);
+}
+
+img.item_image {
+    border-radius: 0;
+    width: 300px;
+}

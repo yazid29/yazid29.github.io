@@ -1,6 +1,6 @@
 header {
-    height: 110vh;
-    padding-top: 4.7rem;
+    height: 100vh;
+    padding-top: 4.3rem;
     overflow: hidden;
 }
 
@@ -34,9 +34,9 @@ header {
     background: var(--color-bg-variant3);
 }
 
+
 .me {
     border-radius: 12rem 12rem 12rem 0;
-    background: var(--color-bg-variant3);
     border: 3px solid var(--color-lightgray);
     width: 17rem;
     height: 17rem;
@@ -47,9 +47,25 @@ header {
 }
 
 .scroll_down {
-
     position: absolute;
-    right: -5rem;
-    bottom: 3.5rem;
+    right: -4.5rem;
+    bottom: 4.5rem;
     transform: rotate(90deg);
+}
+
+.triangle-right {
+    margin-bottom: -2px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-left: 12px solid var(--color-bg-variant3);
+    border-bottom: 7px solid transparent;
+}
+
+/* Small */
+@media screen and (max-width:610px) {
+    .scroll_down {
+        display: none;
+    }
 }

@@ -1,1 +1,35 @@
+#experience {
+    height: 110vh;
+}
 
+.used {
+    filter: grayscale(100%);
+    border-radius: 0rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.used:hover {
+    filter: grayscale(0%);
+}
+
+.experience_content>p {
+    margin-bottom: 1rem;
+}
+
+.skillmaybe {
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+/* small */
+@media screen and (max-width:800px) {
+    #experience {
+        transition: var(--transition);
+        margin-bottom: 1rem;
+        /* height: 120vh; */
+    }
+}

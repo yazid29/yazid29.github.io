@@ -2,7 +2,9 @@ import React from "react";
 import './footer.css';
 const Footer = () => {
     return (
-        <div>Footer</div>
+        <section id="footer" className="contact_content">
+            Ahmad Yazid Munif &copy; 2023.
+        </section>
     )
 }
 

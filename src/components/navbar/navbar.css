@@ -1,1 +1,40 @@
+nav {
+    border-radius: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: max-content;
+    /* width: 50vw; */
+    display: block;
+    padding: 0.5rem 1.3rem;
+    z-index: 2;
+    position: fixed;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(0.5rem);
+}
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    padding: 0 0.7rem;
+}
+
+li a {
+    /* display: block;
+    text-decoration: none; */
+    display: flex;
+    color: var(--color-bg-variant4);
+
+    padding: 0.5rem;
+    border-radius: 3rem;
+}
+
+/* a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+} */

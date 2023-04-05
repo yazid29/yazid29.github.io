@@ -1,0 +1,25 @@
+#contact {
+    height: fit-content;
+}
+
+.contact_content {
+    display: flex;
+    justify-content: center;
+}
+
+.contact_item {
+    display: flex;
+    margin: 0;
+    border: 1px solid var(--color-bg-variant3);
+    border-radius: 0.5rem;
+    background: var(--color-bg-variant2);
+    /* text-align: center; */
+}
+
+.contactIcon {
+    margin: 2px;
+    border: 1px solid var(--color-bg-variant3);
+    border-radius: 0.5rem;
+    width: 50px;
+    height: 50px;
+}

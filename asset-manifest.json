@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.b030ad58.css",
-    "main.js": "/static/js/main.b17ec1cf.js",
+    "main.css": "/static/css/main.aff54821.css",
+    "main.js": "/static/js/main.cdd2e394.js",
     "static/media/foto1.png": "/static/media/foto1.3c282dc7d5fd885a2755.png",
+    "static/media/deteksisarkasmeProses.png": "/static/media/deteksisarkasmeProses.18617a9b316191716632.png",
     "static/media/myportofolio.png": "/static/media/myportofolio.cec29cb70aa86cc17eab.png",
     "static/media/python.png": "/static/media/python.49c4c5298daab61efe71.png",
     "static/media/foto2.jpg": "/static/media/foto2.44f5cb000e476d0106cd.jpg",
+    "static/media/penilaianPegawai.png": "/static/media/penilaianPegawai.d00720233d92e489e3db.png",
+    "static/media/bangundatar.png": "/static/media/bangundatar.237184f673fbf4362ba5.png",
     "static/media/laravel.png": "/static/media/laravel.1d506f7409ebb6dfa167.png",
     "static/media/jquery.png": "/static/media/jquery.14ace3d4a3b0d31c4784.png",
     "static/media/Codeigniter.png": "/static/media/Codeigniter.0194e4fd9dd5ff1ad3b0.png",
     "static/media/php.png": "/static/media/php.0a564540c19c7189202e.png",
     "index.html": "/index.html",
-    "main.b030ad58.css.map": "/static/css/main.b030ad58.css.map",
-    "main.b17ec1cf.js.map": "/static/js/main.b17ec1cf.js.map"
+    "main.aff54821.css.map": "/static/css/main.aff54821.css.map",
+    "main.cdd2e394.js.map": "/static/js/main.cdd2e394.js.map"
   },
   "entrypoints": [
-    "static/css/main.b030ad58.css",
-    "static/js/main.b17ec1cf.js"
+    "static/css/main.aff54821.css",
+    "static/js/main.cdd2e394.js"
   ]
 }

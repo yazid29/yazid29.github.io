@@ -1,26 +1,98 @@
+#portofolio {
+    height: max-content;
+}
+
 .portofolio_content {
-    /* width: 400px; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* display: flex;
-    flex-wrap: wrap; */
     gap: 2rem;
-    /* justify-content: space-evenly; */
 }
 
 .portofolio_item {
-    padding: 1.1rem;
-    border-radius: 2rem;
+    object-fit: contain;
     border: 1px solid var(--color-bg-variant3);
     background: var(--color-bg-variant2);
     text-align: center;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
-.portofolio_item:hover {
-    background: var(--color-bg-variant4);
-}
 
-img.item_image {
+.header-area {
+    height: 265px;
+    background-size: cover;
     border-radius: 0;
-    width: 300px;
+    transform: scale(1);
+    transition: all .3s;
+}
+
+.body-area {
+    margin-top: -0.5rem;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1;
+    background: var(--color-bg-variant2);
+}
+
+.footer-area {
+    color: var(--color-bg-variant3);
+    padding: 5px 20px;
+    bottom: 0;
+    text-align: start;
+    background: var(--color-bg-variant2);
+}
+
+.portofolio_item:hover .body-area {
+    cursor: pointer;
+}
+
+.portofolio_item:hover .item_image {
+    transform: scale(1.2);
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.item_image {
+    opacity: 0.9;
+}
+
+.overlay {
+    position: absolute;
+    padding-top: 15px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background: var(--color-bg-variant2);
+}
+
+.portofolio_item:hover .overlay {
+    opacity: 1;
+}
+
+.btn-card {
+    height: 35px;
+    padding: 0.2rem 1rem;
+    display: inline-block;
+    color: var(--color-bg-variant3);
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-bg-variant3);
+    /* transition: var(--transition); */
+}
+
+.btn-card:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--color-bg-variant2);
+    border-color: transparent;
+}
+
+@media screen and (max-width:750px) {
+    .portofolio_content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }

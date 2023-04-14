@@ -16,7 +16,6 @@ const Portofolio = () => {
                     <div className="body-area">
                         <h3 >Website Portofolio</h3>
                         <div className="overlay">
-                            {/* <a href="#">View</a> */}
                             Halaman ini
                         </div>
                     </div>
@@ -43,9 +42,7 @@ const Portofolio = () => {
                     <div className="body-area">
                         <h3>Deteksi Sarkasme</h3>
                         <div className="overlay">
-                            <a className="btn-card" href="https://yazid29-streamlit-deteksisarkasme-stream-deteksisarkasme-5zp9x9.streamlit.app/">View</a>
-                            &nbsp;
-                            <a className="btn-card" href="https://github.com/yazid29/Streamlit_DeteksiSarkasme">Github</a>
+                            <a className="btn-card" href="https://github.com/yazid29/Deteksi_Sarkasme">Github</a>
                         </div>
                     </div>
                     <div className="footer-area">

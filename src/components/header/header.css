@@ -4,6 +4,10 @@ header {
     overflow: hidden;
 }
 
+.heade {
+    font-size: larger;
+}
+
 .header_container {
     text-align: center;
     height: 100%;

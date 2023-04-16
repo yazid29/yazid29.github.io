@@ -69,7 +69,7 @@ h1 {
 section {
     padding-top: 4.3rem;
     height: 81vh;
-
+    max-height: max-content;
 }
 
 section>h2,

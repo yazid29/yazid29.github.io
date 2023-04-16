@@ -15,13 +15,16 @@ const Experience = () => {
             <h2>Pengalaman</h2>
             <div className="container experience_content">
                 <p>
-                    Saya telah melakukan pengembangan web dengan beberapa
-                    project pribadi selama masih menjadi mahasiswa,
-                    dan saya selalu ingin belajar lebih banyak di
+                    Saya pernah melakukan pengolahan data seperti
+                    pembersihan data, manipulasi data, dan
+                    data modeling dengan beberapa metode <i>machine learning</i>.
+                    Selain itu saya juga melakukan pengembangan web dengan beberapa
+                    project selama masih menjadi mahasiswa.
+                    Namun saya selalu ingin belajar lebih banyak di
                     era teknologi industri yang cepat ini.
                 </p>
                 <p>
-                    Beberapa framework, dan bahasa pemrograman yang pernah saya gunakan.
+                    Beberapa alat dan bahasa pemrograman yang pernah saya gunakan.
                 </p>
                 <div className="skillmaybe">
                     <img className="used" src={HTML} alt="HTML" />

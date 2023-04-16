@@ -19,16 +19,13 @@ const About = () => {
                     </p>
                     <p className="aboutp secondparagraph">
                         Sepanjang studi hingga saat ini,
-                        saya lebih banyak belajar tentang pengembangan perangkat lunak,
-                        terutama perangkat lunak berbasis web dan menangani data (database).
-                    </p>
-                    <p className="aboutp thirdparagraph">
-                        Seiring dengan pertumbuhan saya sebagai pengembang,
-                        saya berharap dapat membuat perangkat lunak yang baik sehingga
-                        dapat digunakan oleh orang lain.
+                        saya lebih banyak belajar terkait dengan data.
+                        Mulai dari penambangan data <i>(Data Mining)</i>,
+                        pengolahan data (database) dan <i>Web Developer</i>.
+                        Sehingga saya memutuskan untuk mendalami karir
+                        sebagai data analyst dan data scientist.
                     </p>
                 </div>
-
             </div>
         </section>
     )

@@ -19,10 +19,12 @@ const Passion = () => {
                         <GiMaterialsScience className="passionIcon" />
                         &nbsp;
                         <h5 className="cardp">Data Science</h5>
-                        <p className="cardp">Mendapatkan nilai suatu data yang dimiliki dengan model prediksi dan teknik machine learning menggunakan Python.</p>
+                        <p className="cardp">Mendapatkan nilai suatu data yang dimiliki dengan model prediksi
+                            dan teknik machine learning menggunakan Python.</p>
                     </article>
                 </div>
             </div>
+
         </section>
     )
 }

@@ -1,8 +1,11 @@
 #portofolio {
-    height: max-content;
+    height: auto !important;
+    padding-bottom: 0.1rem;
+    /* background-color: aqua; */
 }
 
 .portofolio_content {
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;

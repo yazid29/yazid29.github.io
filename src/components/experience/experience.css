@@ -1,5 +1,7 @@
 #experience {
-    height: 110vh;
+    /* background-color: blueviolet; */
+    height: auto !important;
+    padding-bottom: 0.1rem;
 }
 
 .used {
@@ -13,12 +15,15 @@
     filter: grayscale(0%);
 }
 
+.experience_content {
+    margin-top: 1.5rem;
+}
+
 .experience_content>p {
     margin-bottom: 1rem;
 }
 
 .skillmaybe {
-
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -30,6 +35,6 @@
     #experience {
         transition: var(--transition);
         margin-bottom: 1rem;
-        /* height: 120vh; */
+        height: 100vh;
     }
 }

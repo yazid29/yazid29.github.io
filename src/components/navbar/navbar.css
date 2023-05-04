@@ -1,8 +1,7 @@
 nav {
     border-radius: 3rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     width: max-content;
-    /* width: 50vw; */
     display: block;
     padding: 0.5rem 1.3rem;
     z-index: 2;
@@ -26,15 +25,8 @@ li {
 }
 
 li a {
-    /* display: block;
-    text-decoration: none; */
     display: flex;
     color: var(--color-bg-variant4);
-
     padding: 0.5rem;
     border-radius: 3rem;
 }
-
-/* a:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-} */

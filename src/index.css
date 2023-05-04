@@ -52,6 +52,7 @@ img {
     width: var(--container-width-lg);
     margin: 0 auto;
     margin-bottom: 100px;
+    height: max-content;
 }
 
 h1,
@@ -68,19 +69,20 @@ h1 {
 
 section {
     padding-top: 4.3rem;
-    height: 81vh;
-    max-height: max-content;
+    height: 100vh;
+    max-height: min-content;
 }
 
 section>h2,
 section>h5 {
     text-align: center;
     color: white;
+
 }
 
 section>h2 {
     color: var(--color-bg-variant3);
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
     font-size: 1.5rem;
 }
 
@@ -122,35 +124,4 @@ a:hover {
     border-radius: 0.5rem;
     border: 1px solid var(--color-bg-variant3);
     transition: var(--transition);
-}
-
-
-/* Medium */
-@media screen and (max-width:1024px) {
-    .container {
-        width: var(--container-width-md);
-    }
-}
-
-
-/* Small */
-@media screen and (max-width:670px) {
-    .container {
-        width: var(--container-width-sm);
-    }
-
-    section {
-        margin-bottom: 5rem;
-    }
-
-    section>h2 {
-        margin-bottom: 2rem;
-    }
-}
-
-/* Smaller */
-@media screen and (max-width: 450px) {
-    section {
-        height: 120vh;
-    }
 }

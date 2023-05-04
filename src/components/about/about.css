@@ -1,9 +1,13 @@
+/* #about {
+    background-color: wheat;
+} */
+
 .myfoto {
     transition: var(--transition);
     border-radius: 2rem;
     width: 15rem;
     height: 15rem;
-    position: absolute;
+    position: relative;
 }
 
 .myfoto1 {
@@ -22,6 +26,7 @@
 }
 
 .about_container {
+    position: relative;
     margin-top: 3rem;
     display: grid;
     grid-template-columns: 30% 50%;

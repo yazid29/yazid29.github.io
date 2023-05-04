@@ -24,7 +24,6 @@ const Passion = () => {
                     </article>
                 </div>
             </div>
-
         </section>
     )
 }

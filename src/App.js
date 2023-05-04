@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar"
 import Contact from "./components/contact/Contact"
 import Experience from "./components/experience/Experience"
 import Portofolio from "./components/portofolio/Portofolio"
-import Footer from "./components/footer/Footer"
+// import Footer from "./components/footer/Footer"
 import Passion from "./components/passion/Passion"
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
             < Experience />
             < Portofolio />
             < Contact />
-            < Footer />
+            {/* < Footer />  */}
         </div>
     );
 }

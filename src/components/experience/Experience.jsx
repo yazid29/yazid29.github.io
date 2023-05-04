@@ -20,11 +20,10 @@ const Experience = () => {
                     data modeling dengan beberapa metode <i>machine learning</i>.
                     Selain itu saya juga melakukan pengembangan web dengan beberapa
                     project selama masih menjadi mahasiswa.
-                    Namun saya selalu ingin belajar lebih banyak di
-                    era teknologi industri yang cepat ini.
                 </p>
                 <p>
-                    Beberapa alat dan bahasa pemrograman yang pernah saya gunakan.
+                    Namun saya selalu ingin belajar lebih banyak di
+                    era teknologi industri yang cepat ini. Beberapa alat dan bahasa pemrograman yang pernah saya gunakan.
                 </p>
                 <div className="skillmaybe">
                     <img className="used" src={HTML} alt="HTML" />

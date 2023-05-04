@@ -1,6 +1,12 @@
+#passion {
+    height: auto !important;
+    /* background-color: black; */
+    padding-bottom: 50px;
+}
+
 .passion_content {
     display: grid;
-    height: max-content;
+    padding: 2rem;
 }
 
 .passioncards {
@@ -10,9 +16,9 @@
 }
 
 .passion_card {
+    padding: 30px;
     border: 1px solid var(--color-bg-variant3);
     border-radius: 2rem;
-    padding: 1.5rem;
     background: var(--color-bg-variant2);
     text-align: center;
 }
@@ -23,8 +29,8 @@
 
 .passionIcon {
     display: inline;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     margin-bottom: 1rem;
 }
 
@@ -34,7 +40,7 @@ h5.cardp {
 }
 
 /* Medium */
-@media screen and (max-width:700px) {
+@media screen and (max-width:880px) {
     .scroll_down {
         display: none;
     }
@@ -42,18 +48,18 @@ h5.cardp {
     .passioncards {
         display: grid;
         grid-template-columns: 100%;
+        row-gap: 5%;
     }
 
     .passion_card {
         border: 1px solid var(--color-bg-variant3);
         border-radius: 2rem;
-        padding: 1.5rem;
         background: var(--color-bg-variant2);
         text-align: center;
     }
 
     #passion {
-        margin-top: 4rem;
+        margin-top: 2rem;
         height: 100vh;
     }
 }

@@ -13,17 +13,15 @@ const About = () => {
                 </div>
                 <div className="about_content">
                     <p className="aboutp">
-                        Nama saya Ahmad Yazid Munif. Saat ini saya adalah fresh graduate dan
-                        telah memperoleh gelar sarjana teknik informatika dari Universitas Trunojoyo,
-                        Madura.
+                        Nama saya Ahmad Yazid Munif. Saya lulus dan telah
+                        memperoleh gelar sarjana komputer dari jurusan Teknik Informatika
+                        Universitas Trunojoyo Madura.
                     </p>
                     <p className="aboutp secondparagraph">
                         Sepanjang studi hingga saat ini,
-                        saya lebih banyak belajar terkait dengan data.
-                        Mulai dari penambangan data <i>(Data Mining)</i>,
-                        pengolahan data (database) dan <i>Web Developer</i>.
-                        Sehingga saya memutuskan untuk mendalami karir
-                        sebagai data analyst dan data scientist.
+                        saya sangat bersemangat untuk mempelajari hal tentang programming,
+                        terutama pada web programming. Saat ini saya lebih sering belajar Python,
+                        PHP dan JavaScript untuk melatih keterampilan programming yang saya miliki.
                     </p>
                 </div>
             </div>

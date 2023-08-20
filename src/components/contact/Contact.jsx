@@ -7,10 +7,9 @@ const Contact = () => {
     return (
         <section className='contact_content' id="contact">
             <div className="itemcenter">
-                Developed by <br></br>Ahmad Yazid Munif &copy; 2023.
+                Created by <br></br>Ahmad Yazid Munif &copy; 2023.
             </div>
             <div className='itemcenter'>
-
                 <AiFillGithub className="contactIcon" /><a className='contacte' href="https://github.com/yazid29">Github</a>
                 &nbsp;&nbsp;
                 <AiFillLinkedin className="contactIcon" /><a className='contacte' href="https://www.linkedin.com/in/ahmad-yazid-munif/">LinkedIn</a>

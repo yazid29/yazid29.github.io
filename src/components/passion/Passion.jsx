@@ -11,9 +11,9 @@ const Passion = () => {
                     <article className="passion_card">
                         <BsCodeSlash className="passionIcon" />
                         &nbsp;
-                        <h5 className="cardp">Web development</h5>
-                        <p className="cardp">Membuat beberapa proyek kecil berbasis web menggunakan HTML, CSS, dan Javascript.
-                            Serta framework PHP seperti Codeigniter dan Laravel.</p>
+                        <h5 className="cardp">Web Developer</h5>
+                        <p className="cardp">Membuat beberapa proyek kecil berbasis web menggunakan HTML, CSS, Javascript, PHP dan Python.
+                            Serta framework PHP seperti Codeigniter, Laravel dan Flask.</p>
                     </article>
                     <article className="passion_card">
                         <GiMaterialsScience className="passionIcon" />

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.66a48ac1.css",
-    "main.js": "/static/js/main.a54a34a8.js",
+    "main.js": "/static/js/main.a4842a1d.js",
     "static/media/foto1.png": "/static/media/foto1.3c282dc7d5fd885a2755.png",
     "static/media/Java-Logo.png": "/static/media/Java-Logo.d12388325622c41fa780.png",
     "static/media/deteksisarkasmeProses.png": "/static/media/deteksisarkasmeProses.18617a9b316191716632.png",
@@ -16,10 +16,10 @@
     "static/media/php.png": "/static/media/php.0a564540c19c7189202e.png",
     "index.html": "/index.html",
     "main.66a48ac1.css.map": "/static/css/main.66a48ac1.css.map",
-    "main.a54a34a8.js.map": "/static/js/main.a54a34a8.js.map"
+    "main.a4842a1d.js.map": "/static/js/main.a4842a1d.js.map"
   },
   "entrypoints": [
     "static/css/main.66a48ac1.css",
-    "static/js/main.a54a34a8.js"
+    "static/js/main.a4842a1d.js"
   ]
 }

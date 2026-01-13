@@ -1,4 +1,4 @@
-import CardSkill from "./Skillset/CardSkill.jsx";
+import CardSkill from "./Card/SkillCard.jsx";
 const Skill = () => {
     const skills = [
         { name: "Javascript"},

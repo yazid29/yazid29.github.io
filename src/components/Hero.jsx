@@ -2,7 +2,7 @@ import '../styles/input.css';
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center p-9 scroll-mt-24">
-      <div className="max-w-4xl w-full grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl w-full grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <span className="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-[#4E56C0] uppercase bg-purple-100 rounded-full">
                     {/* Available for Work */}

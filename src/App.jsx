@@ -4,6 +4,7 @@ import About from './components/About.jsx'
 import Skill from './components/Skill.jsx'
 import Experience from './components/Experience.jsx'
 import Project from './components/Project.jsx'
+import Contact from './components/Contact.jsx'
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
             <Skill />
             <Experience />
             <Project />
+            <Contact/>
           </main>
       </div>
     </>

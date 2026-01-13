@@ -3,7 +3,6 @@ import '../styles/input.css';
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [active, setActive] = useState("home");
-
     useEffect(() => {
         const sections = document.querySelectorAll("section");
         const observer = new IntersectionObserver(
@@ -39,7 +38,7 @@ const Navbar = () => {
                 </div>
                 <button id="menu-btn" className="md:hidden text-white p-2" onClick={() => setOpen(!open)}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
 

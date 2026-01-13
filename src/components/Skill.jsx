@@ -14,12 +14,12 @@ const Skill = () => {
     return (
         <section id="skills" className="min-h-screen flex item-start justify-center p-3 md:p-6 pt-3 md:pt-28 scroll-mt-24">
             <div className="max-w-4xl w-full text-center">
-                <h2 class="text-3xl font-bold mb-3 md:mb-24">
+                <h2 className="text-3xl font-bold mb-3 md:mb-24">
                     Tech Stack
                 </h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                    {skills.map((skill) => (
-                        <CardSkill skill={skill} />
+                    {skills.map((skill, index) => (
+                        <CardSkill key={index} skill={skill} />
                     ))}
                 </div>
             </div>

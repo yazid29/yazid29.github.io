@@ -6,7 +6,7 @@ const ProjectCard = ({nameProject, nameCompany, description, stack,repository}) 
             <p className="mt-4 text-slate-600 text-sm">
               {description}
             </p>
-            <div class="mt-8 flex flex-wrap gap-2">
+            <div className="mt-8 flex flex-wrap gap-2">
                 {stack && stack.map((item, index) => (
                   <span key={index} className="px-3 py-1 text-xs font-semibold bg-purple-100 text-purple-700 rounded-full">{item}</span>
                 ))}

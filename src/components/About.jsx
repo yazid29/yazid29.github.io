@@ -1,7 +1,13 @@
+import useReveal from "./Card/UseReveal";
 const About = () => {
+    const [ref, show] = useReveal();
     return (
         <section id="about" className="min-h-screen flex items-start justify-center p-8 mt-3 md:mt-6 scroll-mt-24 bg-gradient-to-br from-[#A7AAE1] to-[#696FC7]">
-            <div className="max-w-4xl w-full">
+            <div ref={ref}
+                className={`max-w-4xl w-full
+                transition-all duration-600 ease-out
+                ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+            `}>
                 <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-1 md:mb-6">
                     About Me
                 </h2>

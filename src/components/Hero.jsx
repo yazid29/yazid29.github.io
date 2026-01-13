@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import TypeIt from "typeit-react";
 import '../styles/input.css';
 const Hero = () => {

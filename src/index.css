@@ -1,9 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import "tailwindcss";
+body {
+    font-family: 'Poppins', sans-serif;
+}
 
-* {
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+    from {
+    opacity: 0;
+    transform: translateY(12px);
+    }
+
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* * {
     margin: 0;
     padding: 0;
     border: 0;
@@ -14,7 +35,6 @@
 }
 
 :root {
-    /* --color-bg:rgb(19, 33, 51); */
     --color-bg: #0B2447;
     --color-bg-variant2: #19376D;
     --color-bg-variant3: #3f96d4;
@@ -24,7 +44,6 @@
     --container-width-lg: 75%;
     --container-width-md: 85%;
     --container-width-sm: 90%;
-
     --transition: all 400ms ease;
 }
 
@@ -41,7 +60,6 @@ img {
     border-radius: 12rem 12rem 12rem 0;
     display: inline-block;
     width: 100%;
-    /* object-fit: cover; */
 }
 
 ::-webkit-scrollbar {
@@ -82,7 +100,6 @@ section>h5 {
 
 section>h2 {
     color: var(--color-bg-variant3);
-    /* margin-bottom: 3rem; */
     font-size: 1.5rem;
 }
 
@@ -106,7 +123,6 @@ a:hover {
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     border: 1px solid var(--color-bg-variant3);
-    /* transition: var(--transition); */
 }
 
 .btn:hover {
@@ -124,4 +140,4 @@ a:hover {
     border-radius: 0.5rem;
     border: 1px solid var(--color-bg-variant3);
     transition: var(--transition);
-}
+} */

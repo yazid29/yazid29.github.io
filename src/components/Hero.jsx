@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import TypeIt from "typeit-react";
 import '../styles/input.css';
 const Hero = () => {
   return (
@@ -11,7 +13,16 @@ const Hero = () => {
                     Hi, I'm <br></br> <span className="text-[#4E56C0]">Ahmad Yazid Munif</span>
                 </h1>
                 <p datatype="typing" className="mt-6 text-lg text-slate-700 leading-relaxed">
-                    &nbsp;
+                    <TypeIt
+                        options={{
+                            strings: [
+                            "Focused on building efficient systems while expanding my skills to deliver seamless and user-friendly applications."
+                            ],
+                            speed: 25,
+                            waitUntilVisible: true,
+                            cursor: true,
+                        }}
+                    />
                 </p>
 
                 <div className="mt-8 flex gap-8 item-center border-l-4 border-purple-200 pl-6">
@@ -26,7 +37,7 @@ const Hero = () => {
                 </div>
 
                 <div className="mt-10 grid grid-cols-2 sm:flex sm:flex-wrap gap-4">
-                    <a href="#project" className="bg-[#4E56C0] text-white px-7 py-2.5 text-sm font-semibold rounded-xl hover:bg-[#482890] transition-all shadow-lg flex item-center gap-2">
+                    <a href="#projects" className="bg-[#4E56C0] text-white px-7 py-2.5 text-sm font-semibold rounded-xl hover:bg-[#482890] transition-all shadow-lg flex item-center gap-2">
                         View My Work
                     </a>
                     <a href="#contact" className=" bg-white border-2 border-[#4E56C0] text-[#4E56C0] px-7 py-2.5 text-sm font-semibold rounded-xl hover:bg-[#696FC7] hover:text-white transition-all">
@@ -35,13 +46,13 @@ const Hero = () => {
                 </div>
 
                 <div className="mt-8 flex item-center gap-5 text-slate-400
-                    before:content-[''] before:h-px before:w-20 before:bg-slate-300 before:mr-4">
-                    <a href="#" className="hover:text-[#696FC7] transition-colors">
+                    before:content-[''] before:h-px before:w-20 before:bg-slate-300 before:mr-4 before:self-center">
+                    <a href="https://www.linkedin.com/in/ahmad-yazid-munif/" target="_blank" className="hover:text-[#696FC7] transition-colors">
                         <span className="text-sm font-medium">
                             <i className="fa fa-linkedin-square" style={{ fontSize: '24px' }}></i>
                         </span>
                     </a>
-                    <a href="#" className="hover:text-[#696FC7] transition-colors">
+                    <a href="https://github.com/yazid29" target="_blank" className="hover:text-[#696FC7] transition-colors">
                         <span className="text-sm font-medium">
                             <i className="fa fa-github" style={{ fontSize: '24px' }}></i>
                         </span>

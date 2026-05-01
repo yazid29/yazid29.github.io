@@ -13,17 +13,13 @@ const About = () => {
                 </h2>
                 <div className="max-w-4xl w-full p-6 md:p-12 space-y-3">
                     <p className="text-sm md:text-base lg:text-lg text-white/90 text-justify indent-8">
-                        I'm a dedicated software engineer with over 3 years of experience, mainly focused on backend logic and
-                        building reliable, scalable applications. 
+                        Software Engineer with around 5 years of experience focusing on backend development and business logic implementation. Currently working as a Salesforce Developer, building custom features, integrations, and scalable solutions based on business requirements.
                     </p>
                     <p className="text-sm md:text-base lg:text-lg text-white/90 text-justify indent-8">
-                        Currently, I work as a Salesforce Developer, where I deal with business logic, integrations, and custom
-                        features. With a strong foundation in programming, I can adapt quickly to new technologies and languages. I
-                        continue to improve my full-stack skills, aiming to build end-to-end solutions that are
-                        clean, maintainable, and practical for real-world use.                    </p>
+                        Experienced in JavaScript, .NET, Python, Node.js (Express), PostgreSQL, REST APIs, Apex, and Lightning Web Components on the Salesforce platform. I am currently expanding my expertise into full-stack development using React and modern web technologies.
+                    </p>
                     <p className="text-sm md:text-base lg:text-lg text-white/90 text-justify indent-8">
-                        I believe in continuous learning and teamwork, and I enjoy collaborating with others to deliver solutions
-                        that truly support business needs.
+                        I enjoy designing clean and maintainable systems and continuously improving my engineering practices through hands-on projects and real-world problem solving.
                     </p>
                 </div>
             </div>

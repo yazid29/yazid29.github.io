@@ -10,7 +10,7 @@ const ExperienceCard = ({ title, company, period, description, points }) => {
       </p>
 
       {points && (
-        <ul className="mt-3 list-disc list-inside text-slate-600 space-y-1">
+        <ul className="mt-3 list-disc list-outside pl-5 text-slate-600 space-y-1">
           {points.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

@@ -10,7 +10,7 @@ export default function useReveal() {
           setVisible(true);
         }
       },
-      { threshold: 1 }
+      { threshold: 0.1 }
     );
 
     if (ref.current) observer.observe(ref.current);

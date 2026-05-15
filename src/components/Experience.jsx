@@ -6,7 +6,7 @@ const Experience = () => {
         {
             title: "Software Engineer",
             company: "PT Mitra Integrasi Informatika",
-            period: "Sep 2023 – Present",
+            period: "Sep 2023 - Present",
             description: "Assigned to various client projects as a Technical Consultant and Full-stack Developer:",
             points: [
                 "Developed and maintained Salesforce solutions (Apex, LWC, Visualforce, Flows) to automate complex business logic and enhance user interfaces.",
@@ -28,7 +28,7 @@ const Experience = () => {
         }
     ];
     return (
-        <section id="experience" className="min-h-screen flex items-start justify-center p-3 pt-3 md:p-5 md:pt-5 scroll-mt-24 bg-gradient-to-br from-[#A7AAE1] to-[#696FC7]">
+        <section id="experience" className="min-h-screen flex items-start justify-center p-3 pt-3 md:p-5 md:pt-5 scroll-mt-24 bg-linear-to-br from-[#A7AAE1] to-[#696FC7]">
             <div ref={ref}
                 className={`transition-all duration-600 ease-out
             ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}

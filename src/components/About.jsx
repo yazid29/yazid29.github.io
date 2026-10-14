@@ -4,16 +4,19 @@ import {
   CheckCircle,
   MapPin,
   Briefcase,
-  Sparkles
+  Sparkles,
+  Code2,
+  GraduationCap,
+  Layers,
+  ShieldCheck
 } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
-import developerPhoto from "../assets/foto2.jpg";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative py-24 md:py-32 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
+      className="relative pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-16 md:pb-24 lg:pt-20 lg:pb-28 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -22,7 +25,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 space-y-2.5 sm:space-y-3"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0e1d15] border border-[#234b34] text-[#52b788] text-xs font-mono uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
@@ -32,42 +35,35 @@ export default function About() {
             Who is <span className="text-[#52b788]">Ahmad Yazid Munif</span>?
           </h2>
           <p className="text-[#9dafa3] text-sm sm:text-base leading-relaxed">
-            Delivering secure enterprise backends, scalable CRM architectures, and automated cloud deployments.
+            Delivering secure backends, scalable CRM architectures, and automated deployments.
           </p>
         </motion.div>
 
         {/* 2-Column Layout */}
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          {/* Left: Professional Portrait Card */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left: Technical Profile & Specifications Card (No Photo) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-5 flex justify-center"
+            className="lg:col-span-5 flex justify-center w-full"
           >
-            <div className="relative w-full max-w-md group">
-              {/* Main Card */}
-              <div className="relative rounded-3xl bg-[#0f2017] border border-[#1e3b2b] p-6 md:p-8 overflow-hidden shadow-2xl">
-                {/* Image Container with Dark Mask */}
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/4.5] bg-[#09100b] border border-[#1b3627] mb-6">
-                  <img
-                    src={developerPhoto}
-                    alt="Ahmad Yazid Munif - Software Engineer"
-                    className="w-full h-full object-cover object-top filter contrast-[1.05] brightness-95 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f2017] via-transparent to-transparent opacity-65" />
+            <div className="relative w-full max-w-lg group">
+              {/* Main Technical Card */}
+              <div className="relative rounded-3xl bg-[#0f2017] border border-[#1e3b2b] p-6 sm:p-7 overflow-hidden shadow-2xl">
+                {/* Corner Accent Tech Ticks */}
+                <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-[#52b788]/60 pointer-events-none" />
+                <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-[#52b788]/60 pointer-events-none" />
+                <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-[#52b788]/60 pointer-events-none" />
+                <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-[#52b788]/60 pointer-events-none" />
 
-                  {/* Corner Accent Tech Ticks */}
-                  <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-[#52b788]" />
-                  <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-[#52b788]" />
-                  <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-[#52b788]" />
-                  <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-[#52b788]" />
-                </div>
-
-                {/* Developer Metadata */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
+                {/* Identity Header */}
+                <div className="flex items-center justify-between pb-5 border-b border-[#1b3627]">
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-12 h-12 rounded-2xl bg-[#142d1f] border border-[#234b34] flex items-center justify-center text-[#52b788] shadow-inner">
+                      <Code2 className="w-6 h-6" />
+                    </div>
                     <div>
                       <h3 className="text-lg font-bold text-[#f3f4f6] font-heading">
                         {personalInfo.name}
@@ -76,20 +72,86 @@ export default function About() {
                         {personalInfo.role}
                       </p>
                     </div>
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-[#132d1f] border border-[#234b34] text-[#80d4a6]">
-                      Enterprise Verified
+                  </div>
+                  {/* <span className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-[#132d1f] border border-[#234b34] text-[#80d4a6] shrink-0">
+                    Enterprise
+                  </span> */}
+                </div>
+
+                {/* Technical Specifications Rows */}
+                <div className="py-5 space-y-3 font-mono text-xs">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="text-[#8fa596] shrink-0 flex items-center gap-1.5">
+                      <Briefcase className="w-3.5 h-3.5 text-[#52b788]" />
+                      Company:
+                    </span>
+                    <span className="text-[#f3f4f6] text-right font-medium">
+                      PT Mitra Integrasi Informatika
                     </span>
                   </div>
 
-                  <div className="pt-3 border-t border-[#1b3627] grid grid-cols-2 gap-3 text-xs text-[#8fa596] font-mono">
-                    <div className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-[#52b788] shrink-0" />
-                      <span className="truncate">{personalInfo.location}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Briefcase className="w-3.5 h-3.5 text-[#a1b8aa] shrink-0" />
-                      <span className="truncate">PT MII (Enterprise)</span>
-                    </div>
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="text-[#8fa596] shrink-0 flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-[#52b788]" />
+                      Location:
+                    </span>
+                    <span className="text-[#e2e8f0] text-right">
+                      {personalInfo.workLocation}
+                    </span>
+                  </div>
+
+                  {/* <div className="flex items-start justify-between gap-3">
+                    <span className="text-[#8fa596] shrink-0 flex items-center gap-1.5">
+                      <GraduationCap className="w-3.5 h-3.5 text-[#52b788]" />
+                      Education:
+                    </span>
+                    <span className="text-[#e2e8f0] text-right">
+                      B.Comp.Sc (S.Kom.) · GPA 3.41
+                    </span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="text-[#8fa596] shrink-0 flex items-center gap-1.5">
+                      <Layers className="w-3.5 h-3.5 text-[#52b788]" />
+                      Domains:
+                    </span>
+                    <span className="text-[#e2e8f0] text-right">
+                      Banking, Insurance, Telco
+                    </span>
+                  </div> */}
+
+                  {/* <div className="flex items-start justify-between gap-3">
+                    <span className="text-[#8fa596] shrink-0 flex items-center gap-1.5">
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#52b788]" />
+                      Focus:
+                    </span>
+                    <span className="text-[#e2e8f0] text-right">
+                      Clean Architecture & CI/CD
+                    </span>
+                  </div> */}
+                </div>
+
+                {/* Core Competencies Quick Badges */}
+                <div className="pt-4 border-t border-[#1b3627]">
+                  <p className="text-[11px] font-mono text-[#8fa596] mb-2.5">
+                    Engineering Highlights:
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {[
+                      "RESTful APIs",
+                      "Unit Testing",
+                      "Code Reviews",
+                      "Microservices",
+                      "Git & Version Control",
+                      "Agile Methodologies",
+                    ].map((badge, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-1 rounded-md bg-[#132d1f] border border-[#234b34] text-[10px] font-mono text-[#c2d1c7]"
+                      >
+                        {badge}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -106,7 +168,7 @@ export default function About() {
           >
             <div className="space-y-4">
               <h3 className="text-2xl sm:text-3xl font-bold text-[#f3f4f6] leading-tight font-heading">
-                Engineering High-Impact Systems From Architecture to Cloud Delivery
+                Bridging Clean Code and Reliable Production Delivery
               </h3>
 
               {personalInfo.aboutParagraphs.map((paragraph, idx) => (
@@ -157,33 +219,6 @@ export default function About() {
             </div>
           </motion.div>
         </div>
-
-        {/* Stats Row in Earthy Pine Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-          className="mt-16 md:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
-        >
-          {personalInfo.stats.map((stat, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.02 }}
-              className="relative p-6 rounded-2xl bg-[#0f2017] border border-[#1e3b2b] hover:border-[#388562]/60 transition-all duration-200 shadow-xl group text-center"
-            >
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#f3f4f6] font-mono mb-2 group-hover:text-[#52b788] transition-colors">
-                {stat.value}
-              </div>
-              <div className="text-xs sm:text-sm font-bold text-[#e2e8f0] font-heading">
-                {stat.label}
-              </div>
-              <div className="text-[11px] text-[#8fa596] mt-1 font-mono">
-                {stat.description}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

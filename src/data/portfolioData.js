@@ -27,11 +27,12 @@ export const personalInfo = {
   initials: "AY",
   role: "Software Engineer",
   headline: "Software Engineer",
-  heroTitlePrefix: "Backend Architecture &",
+  heroTitlePrefix: "Software Engineer &",
   heroTitleHighlight: "Enterprise Solutions",
   statusBadge: "Available for Enterprise & Backend Roles",
   statusActive: true,
   location: "Surabaya, Indonesia",
+  workLocation: "Jakarta, Indonesia",
   phone: "+6282234436644",
   email: "ayazidmunif.29@gmail.com",
   socials: {
@@ -41,12 +42,11 @@ export const personalInfo = {
   },
   resumeUrl: "#contact", // Bisa diarahkan ke file PDF resume atau form kontak
   bioGreeting: "Hi, I'm Ahmad Yazid Munif.",
-  bioHeadline:
-    "Software Engineer | Backend Architecture & Enterprise Solutions",
+  bioHeadline: "Software Engineer & Enterprise Solutions",
   bioSubheadline:
     "Enjoy building modern applications with a strong focus on code quality, scalability, and user experience. Bridging the gap between writing code and shipping it reliably to production.",
   aboutParagraphs: [
-    "With over 3 years of professional experience delivering robust enterprise applications across banking, insurance, and telecommunications sectors, I build software that solves real business problems. My expertise spans the full software development lifecycle—from engineering secure RESTful APIs and customizing complex Salesforce CRM architectures to ensuring high code coverage and scalable frontend interfaces.",
+    "With over 3 years of professional experience delivering robust enterprise applications across banking, insurance, and telecommunications sectors, I build software that solves real business problems. My expertise spans the full software development lifecycle from engineering secure RESTful APIs and customizing complex Salesforce CRM architectures to ensuring high code coverage and scalable frontend interfaces.",
     "Today, writing code is only half the challenge. That's why I complement my core development skills in C#, Python, and React with active implementation of DevOps practices, Docker containerization, and CI/CD pipelines. My goal is to ensure seamless, reliable software delivery for production environments.",
     "I actively collaborate with Business Analysts (BA) and QA teams, conduct rigorous peer code reviews, and mentor team members to ensure engineering excellence, system stability, and smooth production releases.",
   ],
@@ -58,19 +58,14 @@ export const personalInfo = {
       description: "Delivering enterprise-scale software",
     },
     {
-      value: "4+",
+      value: "3+",
       label: "Enterprise Domains",
-      description: "Banking, Insurance, Telco & EdTech",
+      description: "Banking, Insurance, Telecommunications",
     },
     {
-      value: "10+",
+      value: "5+",
       label: "Systems & Services",
       description: "Engineered and deployed into production",
-    },
-    {
-      value: "99.9%",
-      label: "Pipeline Reliability",
-      description: "Automated CI/CD & zero-downtime releases",
     },
   ],
 };

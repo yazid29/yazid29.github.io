@@ -1,28 +1,35 @@
-import Navbar from './components/Navbar.jsx'
-import Hero from './components/Hero.jsx'
-import About from './components/About.jsx'
-import Skill from './components/Skill.jsx'
-import Experience from './components/Experience.jsx'
-import Project from './components/Project.jsx'
-import Contact from './components/Contact.jsx'
-import Footer from './components/Footer.jsx'
-function App() {
-  return (
-    <>
-      <div>
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Skill />
-            <Experience />
-            <Project />
-            <Contact/>
-            <Footer/>
-          </main>
-      </div>
-    </>
-  )
-}
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import WhatIDo from "./components/WhatIDo";
+import TechStack from "./components/TechStack";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Certifications from "./components/Certifications";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-[#05070e] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
+      {/* Floating Header */}
+      <Navbar />
+
+      {/* Main Page Flow */}
+      <main className="flex-1 w-full overflow-hidden">
+        <Hero />
+        <About />
+        <WhatIDo />
+        <TechStack />
+        <Experience />
+        <Projects />
+        <Certifications />
+        <Contact />
+      </main>
+
+      {/* Technical Footer */}
+      <Footer />
+    </div>
+  );
+}

@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#05070e] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#09100b] text-[#f3f4f6] flex flex-col font-sans selection:bg-[#388562]/40 selection:text-white">
       {/* Floating Header */}
       <Navbar />
 

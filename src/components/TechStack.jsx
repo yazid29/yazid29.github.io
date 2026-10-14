@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Layers, Sparkles, Cpu } from "lucide-react";
+import { Cpu } from "lucide-react";
 import { techStack, techStackCategories } from "../data/portfolioData";
 import TechIcon from "./TechIcon";
 
@@ -15,12 +15,8 @@ export default function TechStack() {
   return (
     <section
       id="skills"
-      className="relative py-24 md:py-32 bg-[#060812] border-t border-slate-900 overflow-hidden"
+      className="relative py-24 md:py-32 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
     >
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-cyan-600/5 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-purple-600/5 rounded-full blur-[140px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -30,14 +26,14 @@ export default function TechStack() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-12 space-y-3"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0e1d15] border border-[#234b34] text-[#52b788] text-xs font-mono uppercase tracking-wider">
             <Cpu className="w-3.5 h-3.5" />
             <span>Technical Ecosystem</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#f3f4f6] tracking-tight font-heading">
             Technologies I Work With
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#9dafa3] text-sm sm:text-base leading-relaxed">
             Enterprise frameworks, cloud tools, databases, and AI libraries applied across production systems.
           </p>
         </motion.div>
@@ -56,10 +52,10 @@ export default function TechStack() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 cursor-pointer ${
+                className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-150 cursor-pointer ${
                   isActive
-                    ? "bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 text-cyan-300 border border-cyan-500/50 shadow-lg shadow-cyan-500/10 font-bold"
-                    : "bg-slate-900/70 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800/80"
+                    ? "bg-[#2d6a4f] text-[#f3f4f6] font-bold border border-[#388562] shadow-md shadow-[#1b3b2b]/40"
+                    : "bg-[#0f2017] hover:bg-[#13271d] text-[#8fa596] hover:text-[#f3f4f6] border border-[#1e3b2b]"
                 }`}
               >
                 {cat.label}
@@ -68,7 +64,7 @@ export default function TechStack() {
           })}
         </motion.div>
 
-        {/* Tech Stack Badges Grid (Ref-2 Inspired) */}
+        {/* Tech Stack Monospace Badges Grid */}
         <motion.div
           layout
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
@@ -78,33 +74,30 @@ export default function TechStack() {
               <motion.div
                 layout
                 key={item.name}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3, delay: index * 0.02 }}
-                whileHover={{ scale: 1.04, y: -4 }}
-                className="relative rounded-2xl p-4 bg-gradient-to-b from-slate-900/90 to-[#090e1a] border border-slate-800/80 hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-950/40 transition-all duration-300 flex flex-col items-center justify-center text-center group cursor-default"
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.25, delay: index * 0.015 }}
+                whileHover={{ scale: 1.03, y: -3 }}
+                className="relative rounded-2xl p-4 bg-[#0f2017] border border-[#1e3b2b] hover:border-[#388562]/70 hover:shadow-xl hover:shadow-black/60 transition-all duration-200 flex flex-col items-center justify-center text-center group cursor-default"
               >
-                {/* Glowing subtle hover orb inside card */}
-                <div className="absolute inset-0 rounded-2xl bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-
                 {/* Tech Icon Container */}
-                <div className="w-12 h-12 rounded-xl bg-slate-800/60 border border-slate-700/60 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-[#13281d] border border-[#1e3b2b] flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-200">
                   <TechIcon name={item.icon} className="w-6 h-6" />
                 </div>
 
                 {/* Tech Name */}
-                <h3 className="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-300 transition-colors tracking-tight font-heading">
+                <h3 className="text-xs sm:text-sm font-bold text-[#f3f4f6] group-hover:text-[#80d4a6] transition-colors tracking-tight font-heading">
                   {item.name}
                 </h3>
 
                 {/* Tag / Category Subtext */}
-                <span className="text-[10px] text-slate-400 font-mono mt-1">
+                <span className="text-[10px] text-[#8fa596] font-mono mt-1">
                   {item.tag}
                 </span>
 
                 {/* Proficiency Indicator Pill */}
-                <span className="mt-2 px-2 py-0.5 rounded-full text-[9px] font-mono bg-slate-800/80 border border-slate-700 text-slate-300 group-hover:border-cyan-500/30 group-hover:text-cyan-300 transition-colors">
+                <span className="mt-2 px-2 py-0.5 rounded-full text-[9px] font-mono bg-[#13281d] border border-[#1e3b2b] text-[#80d4a6] group-hover:border-[#388562]/50 transition-colors">
                   {item.level}
                 </span>
               </motion.div>
@@ -117,20 +110,20 @@ export default function TechStack() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-14 p-6 rounded-2xl bg-gradient-to-r from-cyan-950/20 via-slate-900/50 to-emerald-950/20 border border-cyan-500/20 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-14 p-6 rounded-2xl bg-[#0f2017] border border-[#1e3b2b] max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
         >
           <div className="space-y-1">
-            <h4 className="text-sm font-bold text-white font-heading">
+            <h4 className="text-sm font-bold text-[#f3f4f6] font-heading">
               Need custom integrations or proprietary enterprise stacks?
             </h4>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-[#8fa596]">
               Experienced in banking core adapters, microservice orchestration, and high-security compliance workflows.
             </p>
           </div>
           <a
             href="#contact"
-            className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all shrink-0"
+            className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-[#13281d] hover:bg-[#1a3828] text-[#80d4a6] border border-[#234b34] transition-all shrink-0 cursor-pointer"
           >
             Discuss Architecture &rarr;
           </a>

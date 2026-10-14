@@ -5,9 +5,7 @@ import {
   Calendar,
   MapPin,
   CheckCircle2,
-  Sparkles,
-  Building2,
-  ChevronRight
+  Building2
 } from "lucide-react";
 import { experiences } from "../data/portfolioData";
 
@@ -15,11 +13,8 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-24 md:py-32 bg-[#05070e] border-t border-slate-900/80 overflow-hidden"
+      className="relative py-24 md:py-32 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
     >
-      {/* Subtle background glow */}
-      <div className="absolute top-1/4 right-0 w-80 h-80 bg-indigo-600/5 rounded-full blur-[140px] pointer-events-none" />
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -29,99 +24,99 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-3"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0e1d15] border border-[#234b34] text-[#52b788] text-xs font-mono uppercase tracking-wider">
             <Briefcase className="w-3.5 h-3.5" />
             <span>Career Journey</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#f3f4f6] tracking-tight font-heading">
             Professional Experience
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#9dafa3] text-sm sm:text-base leading-relaxed">
             Delivering mission-critical enterprise systems, microservices, and client-centric software engineering.
           </p>
         </motion.div>
 
         {/* Vertical Timeline */}
-        <div className="relative border-l border-slate-800 ml-4 sm:ml-8 md:ml-32 pl-6 sm:pl-8 space-y-12">
+        <div className="relative border-l border-[#1b3828] ml-4 sm:ml-8 md:ml-32 pl-6 sm:pl-8 space-y-12">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
               className="relative group"
             >
-              {/* Timeline Node Icon / Dot */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-[#05070e] border-2 border-cyan-400 flex items-center justify-center group-hover:scale-125 group-hover:border-emerald-400 transition-all duration-300 shadow-md shadow-cyan-500/30">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:bg-emerald-400"></span>
+              {/* Timeline Node Dot */}
+              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-[#09100b] border-2 border-[#52b788] flex items-center justify-center group-hover:scale-110 transition-all duration-200 shadow-md">
+                <span className="w-2 h-2 rounded-full bg-[#52b788]"></span>
               </div>
 
               {/* Timestamp label on left for md+ screens */}
               <div className="hidden md:block absolute -left-36 top-1 text-right w-24">
-                <span className="text-xs font-mono font-semibold text-cyan-400 block">
+                <span className="text-xs font-mono font-semibold text-[#52b788] block">
                   {exp.period.split("–")[0]?.trim()}
                 </span>
-                <span className="text-[10px] font-mono text-slate-500">
+                <span className="text-[10px] font-mono text-[#6d8876]">
                   {exp.badge}
                 </span>
               </div>
 
-              {/* Main Experience Card */}
+              {/* Main Experience Card in Deep Pine */}
               <motion.div
                 whileHover={{ scale: 1.01 }}
-                className="rounded-3xl p-6 sm:p-8 bg-gradient-to-b from-slate-900/80 to-[#080d19] border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 shadow-xl space-y-4"
+                className="rounded-3xl p-6 sm:p-8 bg-[#0f2017] border border-[#1e3b2b] hover:border-[#388562]/60 transition-all duration-200 shadow-xl space-y-4"
               >
                 {/* Header Information */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#1b3627] pb-4">
                   <div>
                     <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-cyan-500/10 border border-cyan-500/20 text-cyan-300">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#14281e] border border-[#234b34] text-[#80d4a6]">
                         {exp.type}
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 md:hidden">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#14281e] border border-[#234b34] text-[#52b788] md:hidden">
                         {exp.period}
                       </span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-white font-heading group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#f3f4f6] font-heading group-hover:text-[#80d4a6] transition-colors">
                       {exp.role}
                     </h3>
-                    <h4 className="text-sm font-semibold text-slate-300 flex items-center gap-1.5 mt-0.5">
-                      <Building2 className="w-4 h-4 text-cyan-400" />
+                    <h4 className="text-sm font-semibold text-[#e2e8f0] flex items-center gap-1.5 mt-0.5">
+                      <Building2 className="w-4 h-4 text-[#52b788]" />
                       <span>{exp.company}</span>
                     </h4>
                   </div>
 
-                  <div className="flex sm:flex-col items-start sm:items-end gap-1 text-xs font-mono text-slate-400">
-                    <span className="hidden md:flex items-center gap-1 text-slate-300">
-                      <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                  <div className="flex sm:flex-col items-start sm:items-end gap-1 text-xs font-mono text-[#8fa596]">
+                    <span className="hidden md:flex items-center gap-1 text-[#c2d1c7]">
+                      <Calendar className="w-3.5 h-3.5 text-[#52b788]" />
                       {exp.period}
                     </span>
-                    <span className="flex items-center gap-1 text-slate-400">
-                      <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                    <span className="flex items-center gap-1 text-[#8fa596]">
+                      <MapPin className="w-3.5 h-3.5 text-[#6d8876]" />
                       {exp.location}
                     </span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-slate-300 leading-relaxed text-justify">
+                <p className="text-sm text-[#9dafa3] leading-relaxed text-justify">
                   {exp.description}
                 </p>
 
                 {/* Achievement Bullets */}
                 <div className="space-y-2 pt-2">
-                  <h5 className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold">
+                  <h5 className="text-xs font-mono uppercase tracking-wider text-[#8fa596] font-semibold">
                     Key Deliverables & Responsibilities:
                   </h5>
                   <div className="grid gap-2">
                     {exp.achievements.map((item, aIdx) => (
                       <div
                         key={aIdx}
-                        className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300"
+                        className="flex items-start gap-2.5 text-xs sm:text-sm text-[#c2d1c7]"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#52b788] shrink-0 mt-0.5" />
                         <span className="leading-relaxed">{item}</span>
                       </div>
                     ))}
@@ -129,14 +124,14 @@ export default function Experience() {
                 </div>
 
                 {/* Tech Stack Chips */}
-                <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-2">
-                  <span className="text-[11px] font-mono text-slate-400 mr-1">
+                <div className="pt-4 border-t border-[#1b3627] flex flex-wrap items-center gap-2">
+                  <span className="text-[11px] font-mono text-[#8fa596] mr-1">
                     Stack:
                   </span>
                   {exp.technologies.map((tech, tIdx) => (
                     <span
                       key={tIdx}
-                      className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-slate-800/70 border border-slate-700/80 text-slate-300"
+                      className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#14281e] border border-[#1e3b2b] text-[#c2d1c7]"
                     >
                       {tech}
                     </span>

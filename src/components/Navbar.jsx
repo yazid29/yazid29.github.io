@@ -50,11 +50,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 ${
-        scrolled
-          ? "py-2.5 bg-[#09100b]/95 backdrop-blur-xl border-b border-[#1b3828] shadow-2xl shadow-black/80"
-          : "py-3 md:py-4 bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 ${scrolled
+        ? "py-2.5 bg-[#09100b]/95 backdrop-blur-xl border-b border-[#1b3828] shadow-2xl shadow-black/80"
+        : "py-3 md:py-4 bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand / Logo */}
@@ -73,9 +72,9 @@ export default function Navbar() {
             <span className="font-bold tracking-tight text-[#f3f4f6] group-hover:text-[#80d4a6] transition-colors text-base font-heading">
               {personalInfo.shortName} <span className="text-[#52b788]">.dev</span>
             </span>
-            <span className="text-[10px] text-[#8fa596] font-mono uppercase tracking-wider hidden sm:block">
-              Backend & Infra
-            </span>
+            {/* <span className="text-[10px] text-[#8fa596] font-mono uppercase tracking-wider hidden sm:block">
+              Software Engineer
+            </span> */}
           </div>
         </a>
 
@@ -87,11 +86,10 @@ export default function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-150 cursor-pointer ${
-                  isActive
-                    ? "text-[#80d4a6] font-semibold"
-                    : "text-[#8fa596] hover:text-[#f3f4f6] hover:bg-[#14291e]"
-                }`}
+                className={`relative px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-150 cursor-pointer ${isActive
+                  ? "text-[#80d4a6] font-semibold"
+                  : "text-[#8fa596] hover:text-[#f3f4f6] hover:bg-[#14291e]"
+                  }`}
               >
                 {isActive && (
                   <motion.div
@@ -156,11 +154,10 @@ export default function Navbar() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left px-3 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer ${
-                    activeSection === item.id
-                      ? "bg-[#183625] text-[#80d4a6] border border-[#388562]/50"
-                      : "text-[#8fa596] hover:bg-[#14291e]"
-                  }`}
+                  className={`text-left px-3 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer ${activeSection === item.id
+                    ? "bg-[#183625] text-[#80d4a6] border border-[#388562]/50"
+                    : "text-[#8fa596] hover:bg-[#14291e]"
+                    }`}
                 >
                   {item.label}
                 </button>

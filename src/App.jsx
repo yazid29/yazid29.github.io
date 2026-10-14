@@ -12,12 +12,12 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#09100b] text-[#f3f4f6] flex flex-col font-sans selection:bg-[#388562]/40 selection:text-white">
+    <div className="min-h-screen bg-[#09100b] text-[#f3f4f6] flex flex-col font-sans selection:bg-[#388562]/40 selection:text-white overflow-x-hidden">
       {/* Floating Header */}
       <Navbar />
 
       {/* Main Page Flow */}
-      <main className="flex-1 w-full overflow-hidden">
+      <main className="flex-1 w-full overflow-x-hidden">
         <Hero />
         <About />
         <WhatIDo />

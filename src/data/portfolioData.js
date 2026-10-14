@@ -23,7 +23,7 @@
 
 export const personalInfo = {
   name: "Ahmad Yazid Munif",
-  shortName: "Yazid",
+  shortName: "AYazid",
   initials: "AY",
   role: "Software Engineer",
   headline: "Software Engineer",
@@ -44,12 +44,13 @@ export const personalInfo = {
   bioHeadline:
     "Software Engineer | Backend Architecture & Enterprise Solutions",
   bioSubheadline:
-    "Bridging the gap between writing code and shipping it reliably to production. I specialize in building scalable enterprise applications, integrating robust backend systems (.NET, Python, Salesforce), and automating deployments with modern DevOps practices.",
+    "Enjoy building modern applications with a strong focus on code quality, scalability, and user experience. Bridging the gap between writing code and shipping it reliably to production.",
   aboutParagraphs: [
     "With over 3 years of professional experience delivering robust enterprise applications across banking, insurance, and telecommunications sectors, I build software that solves real business problems. My expertise spans the full software development lifecycle—from engineering secure RESTful APIs and customizing complex Salesforce CRM architectures to ensuring high code coverage and scalable frontend interfaces.",
     "Today, writing code is only half the challenge. That's why I complement my core development skills in C#, Python, and React with active implementation of DevOps practices, Docker containerization, and CI/CD pipelines. My goal is to ensure seamless, reliable software delivery for production environments.",
     "I actively collaborate with Business Analysts (BA) and QA teams, conduct rigorous peer code reviews, and mentor team members to ensure engineering excellence, system stability, and smooth production releases.",
   ],
+  pilarTech: [".NET", "Python", "Docker CI/CD", "PostgreSQL", "Salesforce"],
   stats: [
     {
       value: "3+",
@@ -81,33 +82,21 @@ export const personalInfo = {
 export const heroTerminalSnippets = [
   {
     id: "csharp",
-    fileName: "BankingService.cs",
+    fileName: "CategoryRepository.cs",
     language: "C# (.NET Core)",
-    badge: ".NET 8 Web API",
-    code: `namespace Enterprise.Banking.Services;
+    badge: ".NET 10",
+    code: `namespace MoneyMate.API.Repositories.Categories;
 
-public class TransactionService : ITransactionService 
+public class CategoryRepository(MoneyMateDbContext context) : BaseRepository<Category>(context), ICategoryRepository
 {
-    private readonly IUnitOfWork _unitOfWork;
-    private readonly ILogger<TransactionService> _logger;
-
-    public TransactionService(IUnitOfWork uow, ILogger<TransactionService> log) 
+    public async Task<IEnumerable<Category>> GetCategoriesByUserIdAsync(Guid userId, CancellationToken cancellationToken = default)
     {
-        _unitOfWork = uow;
-        _logger = log;
-    }
-
-    [Authorize(Policy = "RequireEnterpriseTier")]
-    public async Task<Result<TransactionResponse>> ProcessPaymentAsync(
-        PaymentRequest request, CancellationToken ct) 
-    {
-        _logger.LogInformation("Processing idempotent tx {Id}", request.TxId);
-        
-        using var tx = await _unitOfWork.BeginTransactionAsync(ct);
-        var audit = await _unitOfWork.AuditLedger.RecordAsync(request, ct);
-        
-        await _unitOfWork.CommitAsync(ct);
-        return Result.Success(new TransactionResponse(audit.ReceiptId));
+        return await _context.Categories
+            .AsNoTracking()
+            .Where(c => c.UserId == userId && !c.IsTransfer)
+            .OrderBy(c => c.Type)
+            .ThenBy(c => c.Name)
+            .ToListAsync(cancellationToken);
     }
 }`,
   },
@@ -137,69 +126,28 @@ async def analyze_receipt(payload: ReceiptPayload) -> dict:
     return {"status": "success", "data": result.text, "cached": True}`,
   },
   {
-    id: "docker",
-    fileName: "docker-compose.yml",
-    language: "Docker",
-    badge: "Multi-Container Microservices",
-    code: `version: '3.8'
-
-services:
-  core-api:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Production
-      - ConnectionStrings__Default=Host=postgres;Database=EnterpriseCore
-    ports:
-      - "5000:80"
-    depends_on:
-      postgres:
-        condition: service_healthy
-
-  ai-service:
-    build: ./services/ai
-    command: uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
-    restart: always
-
-  postgres:
-    image: postgres:16-alpine
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]`,
-  },
-  {
     id: "cicd",
     fileName: "deploy-pipeline.yml",
     language: "GitHub Actions",
     badge: "Automated CI/CD",
-    code: `name: Production CI/CD Pipeline
-
+    code: `name: Deploy MoneyMate BE
 on:
   push:
-    branches: [ main ]
+    tags:
+      - 'v*'
 
+env:
+  IMAGE_NAME: moneymate-backend
+  APP_PATH: /home/devops/apps/MoneyMate-API
+  
 jobs:
-  test-and-ship:
-    runs-on: ubuntu-latest
+  build-deploy:
+    name: Build & Deploy
+    runs-on: [self-hosted, linux, X64]
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup .NET & Python Runtimes
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
-
-      - name: Run Unit & Integration Tests
-        run: dotnet test --configuration Release /p:CollectCoverage=true
-
-      - name: Build & Publish Container Images
-        run: |
-          docker build -t registry.prod/app:\${{ github.sha }} .
-          docker push registry.prod/app:\${{ github.sha }}
-
-      - name: Zero-Downtime Rolling Deployment
-        run: ./scripts/deploy.sh --cluster prod-enterprise`,
+      - name: Checkout
+        uses: actions/checkout@v4`,
   },
 ];
 

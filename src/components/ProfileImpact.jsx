@@ -63,7 +63,9 @@ export default function ProfileImpact() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#f3f4f6] tracking-tight font-heading">
             Engineering Profile & <span className="text-[#52b788]">Impact</span>
           </h2>
-
+          <p className="text-[#9dafa3] text-sm sm:text-base leading-relaxed">
+            What I do
+          </p>
           {/* Distinctive Subtle Glowing Line Accent */}
           <div className="flex items-center justify-center gap-3 pt-4">
             <div className="h-px w-16 sm:w-24 bg-linear-to-r from-transparent to-[#52b788]/60" />

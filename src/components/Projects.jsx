@@ -11,25 +11,28 @@ import { projects } from "../data/portfolioData";
 import { SiGithub } from "react-icons/si";
 
 const PROJECT_CATEGORIES = [
+  { id: "featured", label: "Featured" },
   { id: "all", label: "All Projects" },
-  { id: "enterprise-backend", label: "Enterprise & Backend" },
-  { id: "ai-data", label: "AI & Data Engineering" },
-  { id: "fullstack", label: "Full-Stack Web" }
+  { id: "salesforce", label: "Salesforce" },
+  { id: "fullstack", label: "Full-Stack" },
+  { id: "ai-data", label: "AI & Data Engineering" }
 ];
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("featured");
   const [activeModalProject, setActiveModalProject] = useState(null);
 
   const filteredProjects =
-    selectedCategory === "all"
+    selectedCategory === "featured"
+      ? projects.filter((p) => p.featured)
+      : selectedCategory === "all"
       ? projects
       : projects.filter((p) => p.category === selectedCategory);
 
   return (
     <section
       id="projects"
-      className="relative py-24 md:py-32 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
+      className="relative py-16 md:py-24 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -60,38 +63,42 @@ export default function Projects() {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-150 cursor-pointer ${
-                  isActive
-                    ? "bg-[#2d6a4f] text-[#f3f4f6] font-bold border border-[#388562] shadow-md shadow-[#1b3b2b]/40"
-                    : "bg-[#0f2017] hover:bg-[#13271d] text-[#8fa596] hover:text-[#f3f4f6] border border-[#1e3b2b]"
-                }`}
+                className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-150 cursor-pointer flex items-center gap-1.5 ${isActive
+                  ? "bg-[#2d6a4f] text-[#f3f4f6] font-bold border border-[#388562] shadow-md shadow-[#1b3b2b]/40"
+                  : "bg-[#0f2017] hover:bg-[#13271d] text-[#8fa596] hover:text-[#f3f4f6] border border-[#1e3b2b]"
+                  }`}
               >
-                {cat.label}
+                {cat.id === "featured" && (
+                  <Sparkles className={`w-3.5 h-3.5 ${isActive ? "text-[#f3f4f6]" : "text-[#d4af37]"}`} />
+                )}
+                <span>{cat.label}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Projects Grid */}
-        <motion.div
-          layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-        >
-          <AnimatePresence>
+        {/* Projects Grid - Smooth Category Switch */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedCategory}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          >
             {filteredProjects.map((project, index) => (
               <motion.div
-                layout
                 key={project.id}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: index * 0.03 }}
+                transition={{ duration: 0.2, delay: index * 0.02, ease: "easeOut" }}
                 whileHover={{ scale: 1.02, y: -3 }}
-                className="relative rounded-3xl p-6 bg-[#0f2017] border border-[#1e3b2b] hover:border-[#388562]/60 transition-all duration-200 shadow-xl flex flex-col justify-between group overflow-hidden"
+                className="relative rounded-3xl p-6 bg-[#0f2017] border border-[#1e3b2b] hover:border-[#388562]/60 transition-colors duration-200 shadow-xl flex flex-col justify-between group overflow-hidden"
               >
                 {/* Featured indicator bar */}
                 {project.featured && (
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#52b788]" />
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#52b788]" />
                 )}
 
                 <div className="space-y-4">
@@ -189,8 +196,8 @@ export default function Projects() {
                 </div>
               </motion.div>
             ))}
-          </AnimatePresence>
-        </motion.div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Architecture Details Modal */}

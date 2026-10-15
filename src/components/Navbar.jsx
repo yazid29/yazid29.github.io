@@ -112,7 +112,7 @@ export default function Navbar() {
             className="px-3.5 py-1.5 text-xs font-mono font-medium text-[#c2d1c7] bg-[#0f2017] hover:bg-[#14291e] border border-[#1e3b2b] hover:border-[#2d5c41] rounded-full transition-all flex items-center gap-1.5"
           >
             <span className="w-2 h-2 rounded-full bg-[#52b788] animate-pulse"></span>
-            <span>v2.4 Live</span>
+            <span>My Repository</span>
           </a>
 
           <a

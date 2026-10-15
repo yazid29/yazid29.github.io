@@ -73,7 +73,7 @@ export default function Certifications() {
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-[#1b3627] flex items-center justify-between text-[10px] font-mono text-[#8fa596]">
-                  <span className="truncate max-w-[200px]" title={cert.credentialId}>
+                  <span className="truncate max-w-50" title={cert.credentialId}>
                     ID: {cert.credentialId}
                   </span>
                   <span className="text-[#52b788] flex items-center gap-1">

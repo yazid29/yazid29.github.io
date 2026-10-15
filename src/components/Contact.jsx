@@ -73,7 +73,7 @@ export default function Contact() {
             Let's Build Something Resilient Together
           </h2>
           <p className="text-[#9dafa3] text-sm sm:text-base leading-relaxed">
-            Currently open to mid-senior backend engineering roles, cloud infrastructure consulting, and enterprise systems delivery.
+            Currently open to collaboration, freelance, or full-time roles as a Software Engineer, particularly focusing on Backend Development, and scalable Enterprise Systems.
           </p>
         </motion.div>
 

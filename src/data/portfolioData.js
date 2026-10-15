@@ -553,7 +553,7 @@ export const projects = [
     id: "moneymate",
     title: "MoneyMate",
     subtitle: "Self-Hosted CI/CD & AI LLM Personal Finance Microservice",
-    category: "enterprise-backend",
+    category: "fullstack",
     featured: true,
     badge: "Microservice Architecture",
     description:
@@ -574,30 +574,57 @@ export const projects = [
     ],
     links: {
       github: "https://github.com/yazid29",
-      demo: "https://yazid29.github.io/",
+      demo: "https://moneymate.semicolon.my.id/", // Tautan baru ditambahkan di sini
     },
   },
   {
     id: "enterprise-crm",
-    title: "Enterprise CRM & Banking API Integration",
-    subtitle: "Core Systems for Banking & Telecom (MII Experience - NDA Safe)",
-    category: "enterprise-backend",
+    title: "Enterprise CRM & Business Integrations",
+    subtitle: "Core Systems for Financial & Insurance Sectors (MII Experience)",
+    category: "salesforce",
     featured: true,
     badge: "Enterprise Scale",
     description:
-      "Architected secure backend business logic and scalable frontend components for major financial, insurance, and telecommunications institutions, handling high-volume customer data securely.",
+      "Maintained robust enterprise-grade applications and delivered core Salesforce CRM solutions to optimize complex business processes for major banking and insurance institutions.",
     keyFeatures: [
-      "Developed complex Salesforce Apex Classes, Triggers, and Lightning Web Components (LWC)",
-      "Integrated internal company API systems with bidirectional synchronization",
-      "High test coverage with rigorous Apex test classes ensuring reliable deployment",
-      "Peer review enforcement and PR management for smooth production releases",
+      "Developed secure RESTful APIs and backend logic utilizing Salesforce Apex (OOP), Triggers, and Flows",
+      "Built scalable frontend user interfaces using Lightning Web Components (LWC)",
+      "Authored rigorous Apex test classes to ensure deployment readiness and high code coverage",
+      "Managed version control via GitHub, enforcing code quality through peer reviews and PR management",
     ],
     techStack: [
       "Salesforce Apex",
       "LWC",
-      "C# (.NET Core)",
+      "Salesforce Flows",
+      "JavaScript",
+      "REST API",
+      "GitHub",
+    ],
+    links: {
+      github: "https://github.com/yazid29",
+    },
+  },
+  {
+    id: "pmis",
+    title: "PMIS - Project Management Information System",
+    subtitle: "Vendor Management Platform for Indosat Ooredoo Hutchison (IOH)",
+    category: "fullstack",
+    featured: true,
+    badge: "Enterprise Scale",
+    description:
+      "A scalable microservices-based project management application developed for vendors of PT Indosat Ooredoo Hutchison to track project milestones, document submissions, and approval workflows.",
+    keyFeatures: [
+      "Engineered backend microservices and RESTful API systems using Express.js (Node.js)",
+      "Built dynamic, scalable frontend user interfaces using React.js",
+      "Implemented role-based access control (RBAC) and optimized PostgreSQL relational database schemas",
+      "Delivered high-performance API systems to handle complex telecommunications data workflows",
+    ],
+    techStack: [
+      "React.js",
       "Express.js",
-      "SQL Server",
+      "Node.js",
+      "JavaScript",
+      "PostgreSQL",
       "REST API",
     ],
     links: {
@@ -610,42 +637,17 @@ export const projects = [
     subtitle:
       "Automated Data Crawling, Deep Learning & Sentiment Classification",
     category: "ai-data",
-    featured: true,
+    featured: false, // Digeser ke false agar portofolio utama fokus ke Backend/Enterprise
     badge: "Machine Learning",
     description:
-      "Custom analytical tools built for external clients to predict currency exchange rate trends (USD/IDR) and classify Indonesian social media content for sentiment and sarcasm detection.",
+      "Custom analytical tools built for independent clients to predict currency exchange rate trends (USD/IDR) and classify Indonesian social media content for sentiment and sarcasm detection.",
     keyFeatures: [
       "Engineered automated web data collection pipelines using Selenium with noise filtering",
-      "Time-series deep learning forecasting models evaluating historical macroeconomic trends",
-      "NLP text classification engine with custom semantic preprocessing",
-      "Interactive Flask web dashboard for real-time inference visualization",
+      "Developed time-series deep learning forecasting models evaluating historical macroeconomic trends",
+      "Implemented an NLP text classification engine with custom semantic preprocessing",
+      "Built an interactive Flask web dashboard for real-time inference visualization",
     ],
     techStack: ["Python", "Selenium", "TensorFlow", "NLP", "Flask", "MySQL"],
-    links: {
-      github: "https://github.com/yazid29",
-    },
-  },
-  {
-    id: "pmis",
-    title: "PMIS - Project Management Information System",
-    subtitle: "Vendor Management Platform for Indosat Ooredoo Hutchison",
-    category: "fullstack",
-    featured: false,
-    badge: "Enterprise Client",
-    description:
-      "A project management application developed for vendors of PT Indosat Ooredoo Hutchison (IOH) to track project milestones, document submissions, and approval workflows.",
-    keyFeatures: [
-      "Responsive React.js interface with role-based access control (RBAC)",
-      "Express.js RESTful API handling transactional submissions",
-      "PostgreSQL relational database schema optimized for query performance",
-    ],
-    techStack: [
-      "React.js",
-      "Express.js",
-      "JavaScript",
-      "PostgreSQL",
-      "REST API",
-    ],
     links: {
       github: "https://github.com/yazid29",
     },
@@ -654,9 +656,9 @@ export const projects = [
     id: "evora",
     title: "EVORA - Event Management Platform",
     subtitle: "Metrodata Full-Stack .NET Bootcamp Final Project",
-    category: "enterprise-backend",
+    category: "fullstack",
     featured: false,
-    badge: "Bootcamp Capstone",
+    badge: "Bootcamp",
     description:
       "An end-to-end event organizer web application allowing administrators and attendees to manage events, ticket bookings, and attendee rosters with secure authentication.",
     keyFeatures: [
@@ -675,12 +677,12 @@ export const projects = [
     subtitle: "Digitizing Paper Workflows for SMAN 19 Surabaya",
     category: "fullstack",
     featured: false,
-    badge: "Production Intern",
+    badge: "Internship Project", // Diubah dari "Production Intern" agar lebih umum dipahami
     description:
       "Full-stack institutional web application that replaced legacy paper-based employee appraisals and created a digitized agenda & resource booking schedule.",
     keyFeatures: [
       "Digitized appraisal scoring matrices and automated weighted evaluation scores",
-      "Calendar-based resource booking system preventing schedule conflicts",
+      "Built a calendar-based resource booking system preventing schedule conflicts",
       "Delivered end-to-end SDLC from requirement gathering to on-premise deployment",
     ],
     techStack: ["PHP", "CodeIgniter 3", "MySQL", "JavaScript", "Bootstrap"],

@@ -5,8 +5,7 @@ import ProfileImpact from "./components/ProfileImpact";
 import TechStack from "./components/TechStack";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import Certifications from "./components/Certifications";
-import Contact from "./components/Contact";
+// import Certifications from "./components/Certifications";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -22,8 +21,7 @@ export default function App() {
         <TechStack />
         <Experience />
         <Projects />
-        <Certifications />
-        <Contact />
+        {/* <Certifications /> */}
       </main>
 
       {/* Technical Footer */}

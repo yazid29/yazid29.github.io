@@ -213,8 +213,8 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-6 pt-4 border-t border-[#122319] flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-[#5c7765] gap-2 text-center">
-          <span>© {new Date().getFullYear()} Ahmad Yazid Munif. All rights reserved.</span>
-          <span>Enterprise Backend & Scalable Systems</span>
+          <span>© {new Date().getFullYear()} Ahmad Yazid Munif.</span>
+          {/* <span>Enterprise Backend & Scalable Systems</span> */}
         </div>
       </div>
     </footer>

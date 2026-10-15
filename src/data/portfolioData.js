@@ -257,10 +257,10 @@ export const whatIDo = [
  * Format: name, level/tag, category, icon
  */
 export const techStackCategories = [
+  { id: "backend", label: "Backend & Frameworks" },
   { id: "all", label: "All Technologies" },
-  { id: "backend", label: "Backend & API" },
-  { id: "frontend-crm", label: "Frontend & CRM" },
-  { id: "database", label: "Database & Data" },
+  { id: "frontend-crm", label: "Frontend & Salesforce" },
+  { id: "database", label: "Database" },
   { id: "devops", label: "DevOps & Infra" },
   { id: "ai", label: "AI & ML" },
 ];

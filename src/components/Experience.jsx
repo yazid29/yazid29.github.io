@@ -32,7 +32,7 @@ export default function Experience() {
             Professional Experience
           </h2>
           <p className="text-[#9dafa3] text-sm sm:text-base leading-relaxed">
-            Delivering mission-critical enterprise systems, microservices, and client-centric software engineering.
+            Building and maintaining enterprise systems, backend architectures, and full-stack applications.
           </p>
         </motion.div>
 
@@ -70,15 +70,6 @@ export default function Experience() {
                 {/* Header Information */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#1b3627] pb-4">
                   <div>
-                    <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#14281e] border border-[#234b34] text-[#80d4a6]">
-                        {exp.type}
-                      </span>
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#14281e] border border-[#234b34] text-[#52b788] md:hidden">
-                        {exp.period}
-                      </span>
-                    </div>
-
                     <h3 className="text-xl sm:text-2xl font-bold text-[#f3f4f6] font-heading group-hover:text-[#80d4a6] transition-colors">
                       {exp.role}
                     </h3>

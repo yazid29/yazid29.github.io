@@ -487,6 +487,7 @@ export const experiences = [
       "React.js",
       "Express.js",
       "SQL Server",
+      "PostgreSQL",
       "REST API",
       "Git/GitHub",
     ],

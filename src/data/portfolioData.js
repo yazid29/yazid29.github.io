@@ -21,6 +21,74 @@
  * ==============================================================================
  */
 
+// MoneyMate Application Screenshots
+import mmLanding from "../assets/moneymate/0-landing-page.png";
+import mmLogin from "../assets/moneymate/1-login.png";
+import mmDashboard from "../assets/moneymate/2-dashboard.png";
+import mmSelectInput from "../assets/moneymate/3-select-input.png";
+import mmTransactionList from "../assets/moneymate/4-transaction-list.png";
+import mmBudgeting from "../assets/moneymate/5-budgeting.png";
+import mmAiChatbot from "../assets/moneymate/6-aichatbot.png";
+import mmAiConfirm from "../assets/moneymate/7-aichatbot-user-confirmation.png";
+import mmAiHistory from "../assets/moneymate/8-aichatbot.png";
+
+export const moneyMateScreenshots = [
+  {
+    src: mmLanding,
+    title: "Landing Page & Core Highlights",
+    caption:
+      "Public homepage showcasing MoneyMate's personal finance tracking, Gemini AI receipt processing, and microservice ecosystem.",
+  },
+  {
+    src: mmLogin,
+    title: "Secure Authentication Portal",
+    caption:
+      "User authentication gateway with encrypted credential validation and JWT token-based session management.",
+  },
+  {
+    src: mmDashboard,
+    title: "Financial Analytics Dashboard",
+    caption:
+      "High-level overview displaying real-time balance metrics, income vs expense breakdowns, and monthly financial summaries.",
+  },
+  {
+    src: mmSelectInput,
+    title: "Transaction Entry & Category Picker",
+    caption:
+      "Interactive modal for logging income and expenses with rapid category allocation and custom note tagging.",
+  },
+  {
+    src: mmTransactionList,
+    title: "Transaction Ledger & Search",
+    caption:
+      "Full-text searchable ledger table with filtering by date range, account type, and expense category.",
+  },
+  {
+    src: mmBudgeting,
+    title: "Budget Planning & Thresholds",
+    caption:
+      "Custom monthly budget caps per category with visual warning progress bars preventing overspending.",
+  },
+  {
+    src: mmAiChatbot,
+    title: "AI Financial Assistant",
+    caption:
+      "Integrated conversational AI assistant powered by Google Gemini 1.5 Flash providing personalized financial guidance.",
+  },
+  {
+    src: mmAiConfirm,
+    title: "Receipt OCR & Parsing Confirmation",
+    caption:
+      "Automated OCR extraction pipeline parsing receipt images into verified structured merchant, total, and tax data before saving.",
+  },
+  {
+    src: mmAiHistory,
+    title: "AI Chat History & Context Memory",
+    caption:
+      "Context-aware conversational session history backed by vector embeddings and semantic caching.",
+  },
+];
+
 export const personalInfo = {
   name: "Ahmad Yazid Munif",
   shortName: "AYazid",
@@ -576,6 +644,9 @@ export const projects = [
       github: "https://github.com/yazid29",
       demo: "https://moneymate.semicolon.my.id/", // Tautan baru ditambahkan di sini
     },
+    hasDetails: true,
+    screenshots: moneyMateScreenshots,
+    videoUrl: null, // Siap disisipkan file video MP4 atau tautan video singkat
   },
   {
     id: "enterprise-crm",
@@ -603,6 +674,9 @@ export const projects = [
     links: {
       github: "https://github.com/yazid29",
     },
+    hasDetails: false,
+    screenshots: [],
+    videoUrl: null,
   },
   {
     id: "pmis",
@@ -630,6 +704,9 @@ export const projects = [
     links: {
       github: "https://github.com/yazid29",
     },
+    hasDetails: false,
+    screenshots: [],
+    videoUrl: null,
   },
   {
     id: "forecasting-nlp",

@@ -1,0 +1,822 @@
+/**
+ * ==============================================================================
+ * PORTFOLIO DATA CONFIGURATION
+ * ==============================================================================
+ * File ini adalah pusat data untuk seluruh konten portofolio Anda.
+ *
+ * CARA MENGEDIT / MENAMBAH KONTEN:
+ * 1. Tambah Project Baru:
+ *    Cukup salin salah satu objek di array `projects`, lalu ubah id, title, category,
+ *    description, keyFeatures, techStack, dan links (github / live).
+ *
+ * 2. Tambah Tech Stack / Skill:
+ *    Tambahkan item baru ke array `techStack` di bawah kategori yang sesuai.
+ *
+ * 3. Tambah Work Experience:
+ *    Tambahkan objek baru ke array `experiences` dengan rincian peran, perusahaan, tanggal,
+ *    dan poin-poin pencapaian.
+ *
+ * 4. Ganti Kontak / Profil:
+ *    Ubah data pada objek `personalInfo`.
+ * ==============================================================================
+ */
+
+// MoneyMate Application Screenshots
+import mmLanding from "../assets/moneymate/0-landing-page.png";
+import mmLogin from "../assets/moneymate/1-login.png";
+import mmDashboard from "../assets/moneymate/2-dashboard.png";
+import mmSelectInput from "../assets/moneymate/3-select-input.png";
+import mmTransactionList from "../assets/moneymate/4-transaction-list.png";
+import mmBudgeting from "../assets/moneymate/5-budgeting.png";
+import mmAiChatbot from "../assets/moneymate/6-aichatbot.png";
+import mmAiConfirm from "../assets/moneymate/7-aichatbot-user-confirmation.png";
+import mmAiHistory from "../assets/moneymate/8-aichatbot.png";
+
+export const moneyMateScreenshots = [
+  {
+    src: mmLanding,
+    title: "Landing Page & Core Highlights",
+    caption:
+      "Public homepage showcasing MoneyMate's personal finance tracking, Gemini AI receipt processing, and microservice ecosystem.",
+  },
+  {
+    src: mmLogin,
+    title: "Secure Authentication Portal",
+    caption:
+      "User authentication gateway with encrypted credential validation and JWT token-based session management.",
+  },
+  {
+    src: mmDashboard,
+    title: "Financial Analytics Dashboard",
+    caption:
+      "High-level overview displaying real-time balance metrics, income vs expense breakdowns, and monthly financial summaries.",
+  },
+  {
+    src: mmSelectInput,
+    title: "Transaction Entry & Category Picker",
+    caption:
+      "Interactive modal for logging income and expenses with rapid category allocation and custom note tagging.",
+  },
+  {
+    src: mmTransactionList,
+    title: "Transaction Ledger & Search",
+    caption:
+      "Full-text searchable ledger table with filtering by date range, account type, and expense category.",
+  },
+  {
+    src: mmBudgeting,
+    title: "Budget Planning & Thresholds",
+    caption:
+      "Custom monthly budget caps per category with visual warning progress bars preventing overspending.",
+  },
+  {
+    src: mmAiChatbot,
+    title: "AI Financial Assistant",
+    caption:
+      "Integrated conversational AI assistant powered by Google Gemini 1.5 Flash providing personalized financial guidance.",
+  },
+  {
+    src: mmAiConfirm,
+    title: "Receipt OCR & Parsing Confirmation",
+    caption:
+      "Automated OCR extraction pipeline parsing receipt images into verified structured merchant, total, and tax data before saving.",
+  },
+  {
+    src: mmAiHistory,
+    title: "AI Chat History & Context Memory",
+    caption:
+      "Context-aware conversational session history backed by vector embeddings and semantic caching.",
+  },
+];
+
+export const personalInfo = {
+  name: "Ahmad Yazid Munif",
+  shortName: "AYazid",
+  initials: "AY",
+  role: "Software Engineer",
+  headline: "Software Engineer",
+  heroTitlePrefix: "Software Engineer &",
+  heroTitleHighlight: "Enterprise Solutions",
+  statusBadge: "Available for Enterprise & Backend Roles",
+  statusActive: true,
+  location: "Surabaya, Indonesia",
+  workLocation: "Jakarta, Indonesia",
+  phone: "+6282234436644",
+  email: "ayazidmunif.29@gmail.com",
+  socials: {
+    github: "https://github.com/yazid29",
+    linkedin: "https://www.linkedin.com/in/ahmad-yazid-munif/",
+    email: "mailto:ayazidmunif.29@gmail.com",
+  },
+  resumeUrl: "#contact", // Bisa diarahkan ke file PDF resume atau form kontak
+  bioGreeting: "Hi, I'm Ahmad Yazid Munif.",
+  bioHeadline: "Software Engineer & Enterprise Solutions",
+  bioSubheadline:
+    "Enjoy building modern applications with a strong focus on code quality, scalability, and user experience. Bridging the gap between writing code and shipping it reliably to production.",
+  aboutParagraphs: [
+    "With over 3 years of professional experience delivering robust enterprise applications across banking, insurance, and telecommunications sectors, I build software that solves real business problems. My expertise spans the full software development lifecycle from engineering secure RESTful APIs and customizing complex Salesforce CRM architectures to ensuring high code coverage and scalable frontend interfaces.",
+    "Today, writing code is only half the challenge. That's why I complement my core development skills in C#, Python, and React with active implementation of DevOps practices, Docker containerization, and CI/CD pipelines. My goal is to ensure seamless, reliable software delivery for production environments.",
+    "I actively collaborate with Business Analysts (BA) and QA teams, conduct rigorous peer code reviews, and mentor team members to ensure engineering excellence, system stability, and smooth production releases.",
+  ],
+  pilarTech: [".NET", "Python", "Docker CI/CD", "PostgreSQL", "Salesforce"],
+  stats: [
+    {
+      value: "3+",
+      label: "Years Experience",
+      description: "Delivering software",
+    },
+    {
+      value: "3+",
+      label: "Enterprise Domains",
+      description: "Banking, Insurance, Telecommunications",
+    },
+    {
+      value: "5+",
+      label: "Systems & Services",
+      description: "Engineered and deployed into production",
+    },
+  ],
+};
+
+/**
+ * Hero Code Editor / Terminal Snippets
+ * Menampilkan kode teknis enterprise dalam tab interaktif di bagian Hero
+ */
+export const heroTerminalSnippets = [
+  {
+    id: "csharp",
+    fileName: "CategoryRepository.cs",
+    language: "C# (.NET Core)",
+    badge: ".NET 10",
+    code: `namespace MoneyMate.API.Repositories.Categories;
+
+public class CategoryRepository(MoneyMateDbContext context) : BaseRepository<Category>(context), ICategoryRepository
+{
+    public async Task<IEnumerable<Category>> GetCategoriesByUserIdAsync(Guid userId, CancellationToken cancellationToken = default)
+    {
+        return await _context.Categories
+            .AsNoTracking()
+            .Where(c => c.UserId == userId && !c.IsTransfer)
+            .OrderBy(c => c.Type)
+            .ThenBy(c => c.Name)
+            .ToListAsync(cancellationToken);
+    }
+}`,
+  },
+  {
+    id: "python",
+    fileName: "ai_service.py",
+    language: "Python (FastAPI)",
+    badge: "FastAPI + Gemini LLM",
+    code: `from fastapi import FastAPI, Depends, HTTPException
+from pydantic import BaseModel, Field
+import google.generativeai as genai
+
+app = FastAPI(title="MoneyMate AI Intelligence", version="2.4.0")
+
+class ReceiptPayload(BaseModel):
+    user_id: str = Field(..., example="usr_9281")
+    image_base64: str
+    currency: str = "IDR"
+
+@app.post("/api/v1/extract-receipt")
+async def analyze_receipt(payload: ReceiptPayload) -> dict:
+    """Async endpoint analyzing receipt metadata with Gemini AI."""
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    result = await model.generate_content_async(
+        f"Parse merchant, total amount, category in JSON: {payload.image_base64[:50]}..."
+    )
+    return {"status": "success", "data": result.text, "cached": True}`,
+  },
+  {
+    id: "cicd",
+    fileName: "deploy-pipeline.yml",
+    language: "GitHub Actions",
+    badge: "Automated CI/CD",
+    code: `name: Deploy MoneyMate BE
+on:
+  push:
+    tags:
+      - 'v*'
+
+env:
+  IMAGE_NAME: moneymate-backend
+  APP_PATH: /home/devops/apps/MoneyMate-API
+  
+jobs:
+  build-deploy:
+    name: Build & Deploy
+    runs-on: [self-hosted, linux, X64]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4`,
+  },
+];
+
+/**
+ * Engineering Profile & Impact
+ */
+export const engineeringImpact = {
+  sectionTitle: "Engineering Profile & Impact",
+  badge: "Engineering Profile & Impact",
+  narrative:
+    "Software Engineer with over 3 years of experience delivering robust enterprise applications across banking, insurance, and telecommunications sectors. Strong background in full-stack architecture, backend engineering (.NET, Python, JavaScript), and CRM Salesforce ecosystem, with an emphasis on clean architecture and system scalability. Complements core software development with DevOps practices, CI/CD automation, and containerization to ensure reliable production deployments and seamless software delivery.",
+  achievementCards: [
+    {
+      id: "backend-apis",
+      iconName: "Server",
+      title: "Backend & API Development",
+      text: "Delivered backend business logic and RESTful APIs for major telecommunications and financial clients using JavaScript and enterprise platforms Salesforce, complemented by C# (.NET Core) for independent microservice projects.",
+      badge: "Core Backend",
+      tech: "JavaScript · .NET Core · REST APIs",
+    },
+    {
+      id: "cicd-automation",
+      iconName: "GitBranch",
+      title: "Version Control & CI/CD",
+      text: "Collaborated within enterprise CI/CD workflows using Git, managing pull requests, and resolving pipeline test failures. Additionally, configured Docker containerization and GitHub Actions for personal projects.",
+      badge: "DevOps & Collaboration",
+      tech: "Git · Docker · GitHub Actions",
+    },
+    {
+      id: "data-ml",
+      iconName: "BrainCircuit",
+      title: "Data Pipelines & Machine Learning",
+      text: "Engineered automated Python data extraction pipelines using Selenium and developed custom NLP and time-series forecasting models for analytical research projects.",
+      badge: "Data & ML",
+      tech: "Python · Machine Learning · NLP",
+    },
+    {
+      id: "fullstack-delivery",
+      iconName: "Layers",
+      title: "Full-Stack System",
+      text: "Delivered complete end-to-end web applications across the full SDLC. Built dynamic frontend interfaces using React.js, seamlessly connected to robust backend systems by Express.js and .NET.",
+      badge: "Full-Stack",
+      tech: "React.js · Express.js · SQL",
+    },
+  ],
+};
+
+/**
+ * 4 Pilar Utama ("What I Do")
+ */
+export const whatIDo = [
+  {
+    id: "backend",
+    iconName: "Server",
+    title: "Backend & API Engineering",
+    subtitle: "Arsitektur tangguh untuk skala enterprise",
+    description:
+      "Merancang dan membangun logika bisnis sisi peladen (server-side) yang aman dan berkinerja tinggi. Ahli dalam mengembangkan RESTful API dan arsitektur microservices menggunakan C# (.NET Core) dan Python untuk memastikan pertukaran data yang lancar di industri keuangan dan telekomunikasi.",
+    highlights: [
+      "Clean Architecture & Dependency Injection (.NET Core)",
+      "RESTful API & Microservices berkinerja tinggi",
+      "Penyimpanan data relasional aman (PostgreSQL, SQL Server)",
+      "High code coverage melalui automated unit testing",
+    ],
+  },
+  {
+    id: "fullstack-crm",
+    iconName: "Code2",
+    title: "Enterprise Full-Stack & CRM",
+    subtitle: "Antarmuka responsif & kustomisasi sistem inti",
+    description:
+      "Membangun antarmuka pengguna sisi klien yang mulus menggunakan React.js dan mengintegrasikannya dengan ekosistem CRM skala besar. Berpengalaman tinggi dalam menyesuaikan arsitektur Salesforce (Apex, LWC) agar sesuai dengan proses bisnis klien yang paling kompleks.",
+    highlights: [
+      "Modern React.js frontend interfaces & state management",
+      "Salesforce Apex Classes, Triggers & Flows Automation",
+      "Lightning Web Components (LWC) untuk enterprise CRM",
+      "Integrasi API middleware dua arah (two-way sync)",
+    ],
+  },
+  {
+    id: "devops",
+    iconName: "Cpu",
+    title: "DevOps & Cloud Deployment",
+    subtitle: "Menjembatani kode dan production",
+    description:
+      "Saya tidak hanya menulis kode, saya memastikan kode tersebut berjalan stabil di server. Memanfaatkan praktik DevOps modern, saya mengemas aplikasi menggunakan Docker dan merancang otomatisasi rilis kode (CI/CD pipelines) mandiri menggunakan GitHub Actions untuk deployment tanpa hambatan.",
+    highlights: [
+      "Multi-stage Docker containerization & alpine images",
+      "Automated CI/CD pipelines dengan GitHub Actions",
+      "Linux server management, Nginx reverse proxy",
+      "Zero-downtime deployment & production health monitoring",
+    ],
+  },
+  {
+    id: "ai-data",
+    iconName: "BrainCircuit",
+    title: "AI Integration & Data Engineering",
+    subtitle: "Membawa kecerdasan buatan ke dunia nyata",
+    description:
+      "Mengintegrasikan kapabilitas Large Language Models (LLM) seperti Gemini AI dan vector embeddings ke dalam aplikasi production (seperti fitur pemindaian struk otomatis). Berpengalaman membangun pipeline ekstraksi data web (Selenium) dan model Machine Learning untuk analisis data.",
+    highlights: [
+      "Gemini AI LLM integration untuk ekstraksi data cerdas",
+      "Vector embeddings semantic search & intelligent caching",
+      "Automated web data scraping pipelines dengan Selenium",
+      "Time-series financial forecasting & NLP text classification",
+    ],
+  },
+];
+
+/**
+ * Kategori Tech Stack & Skills
+ * Format: name, level/tag, category, icon
+ */
+export const techStackCategories = [
+  { id: "backend", label: "Backend & Frameworks" },
+  { id: "all", label: "All Technologies" },
+  { id: "frontend-crm", label: "Frontend & Salesforce" },
+  { id: "database", label: "Database" },
+  { id: "devops", label: "DevOps & Infra" },
+  { id: "ai", label: "AI & ML" },
+];
+
+export const techStack = [
+  // Backend & Architecture
+  {
+    name: "JavaScript / Node.js",
+    category: "backend",
+    tag: "Core Language",
+    icon: "SiJavascript",
+    level: "Advanced",
+  },
+  {
+    name: "Express.js",
+    category: "backend",
+    tag: "REST APIs",
+    icon: "SiExpress",
+    level: "Proficient",
+  },
+  {
+    name: "Python",
+    category: "backend",
+    tag: "Scripts & Automation",
+    icon: "SiPython",
+    level: "Proficient",
+  },
+  {
+    name: "PHP",
+    category: "backend",
+    tag: "Web Development",
+    icon: "SiPhp",
+    level: "Proficient",
+  },
+  {
+    name: "Laravel",
+    category: "backend",
+    tag: "MVC Framework",
+    icon: "SiLaravel",
+    level: "Proficient",
+  },
+  {
+    name: "C# / .NET Core",
+    category: "backend",
+    tag: "Enterprise Backend",
+    icon: "SiDotnet",
+    level: "Intermediate",
+  },
+  {
+    name: "Flask",
+    category: "backend",
+    tag: "Microframework",
+    icon: "SiFlask",
+    level: "Intermediate",
+  },
+  {
+    name: "FastAPI",
+    category: "backend",
+    tag: "Async Microservices",
+    icon: "SiFastapi",
+    level: "Intermediate",
+  },
+  {
+    name: "Java",
+    category: "backend",
+    tag: "Core Concepts",
+    icon: "FaJava", // Atau 'SiJava' tergantung library icon Anda
+    level: "Familiar",
+  },
+  {
+    name: "Spring Boot",
+    category: "backend",
+    tag: "Backend Framework",
+    icon: "SiSpringboot",
+    level: "Familiar",
+  },
+  {
+    name: "CodeIgniter",
+    category: "backend",
+    tag: "Legacy Projects",
+    icon: "SiCodeigniter",
+    level: "Familiar",
+  },
+
+  // Frontend & CRM
+  {
+    name: "Salesforce APEX",
+    category: "frontend-crm",
+    tag: "CRM Core Logic",
+    icon: "SiSalesforce",
+    level: "Advanced",
+  },
+  {
+    name: "Salesforce LWC & Flows",
+    category: "frontend-crm",
+    tag: "Enterprise UI & Auto",
+    icon: "SiSalesforce",
+    level: "Advanced",
+  },
+  {
+    name: "React.js",
+    category: "frontend-crm",
+    tag: "UI Development",
+    icon: "SiReact",
+    level: "Proficient",
+  },
+  {
+    name: "Tailwind CSS",
+    category: "frontend-crm",
+    tag: "Utility Styling",
+    icon: "SiTailwindcss",
+    level: "Proficient",
+  },
+  // {
+  //   name: "TypeScript",
+  //   category: "frontend-crm",
+  //   tag: "Type-Safe Frontend",
+  //   icon: "SiTypescript",
+  //   level: "Intermediate",
+  // },
+
+  // Database & Data
+  {
+    name: "MySQL",
+    category: "database",
+    tag: "Relational DB",
+    icon: "SiMysql",
+    level: "Proficient",
+  },
+  {
+    name: "PostgreSQL",
+    category: "database",
+    tag: "Relational DB",
+    icon: "SiPostgresql",
+    level: "Proficient",
+  },
+  {
+    name: "SQL Server",
+    category: "database",
+    tag: "Enterprise T-SQL",
+    icon: "Database", // Gunakan lucide-react icon generic jika tidak ada logo
+    level: "Intermediate",
+  },
+
+  // DevOps & Infrastructure
+  {
+    name: "Git & GitHub",
+    category: "devops",
+    tag: "Version Control",
+    icon: "SiGit",
+    level: "Advanced",
+  },
+  {
+    name: "Linux / Ubuntu",
+    category: "devops",
+    tag: "Server Administration",
+    icon: "SiLinux",
+    level: "Intermediate",
+  },
+  {
+    name: "Docker",
+    category: "devops",
+    tag: "Container Deployment",
+    icon: "SiDocker",
+    level: "Intermediate",
+  },
+  {
+    name: "GitHub Actions",
+    category: "devops",
+    tag: "CI/CD Pipelines",
+    icon: "SiGithubactions",
+    level: "Intermediate",
+  },
+
+  // AI & Automation
+  // {
+  //   name: "Selenium",
+  //   category: "ai",
+  //   tag: "Web Data Scraping",
+  //   icon: "SiSelenium",
+  //   level: "Proficient",
+  // },
+  {
+    name: "Gemini AI LLM",
+    category: "ai",
+    tag: "Generative AI API",
+    icon: "SiGooglegemini",
+    level: "Intermediate",
+  },
+  {
+    name: "Vector Embeddings",
+    category: "ai",
+    tag: "Semantic Caching",
+    icon: "BrainCircuit", // Lucide react icon
+    level: "Intermediate",
+  },
+];
+
+/**
+ * Work Experience (Timeline)
+ */
+export const experiences = [
+  {
+    company: "PT Mitra Integrasi Informatika",
+    location: "Jakarta, Indonesia (On-Site)",
+    role: "Application Developer Jr.",
+    period: "Sep 2023 – Present",
+    badge: "Current Role",
+    type: "Enterprise IT Consulting",
+    description:
+      "Assigned to top-tier enterprise clients across banking, insurance, and telecommunications sectors to design, develop, and maintain robust business systems and microservices.",
+    achievements: [
+      "Architected backend business logic and secure RESTful APIs utilizing Salesforce Apex Classes, Triggers, Salesforce Flows, C# (.NET Core), and JavaScript (Express.js).",
+      "Built scalable frontend interfaces using JavaScript including Lightning Web Components (LWC) and React.js for seamless enterprise operations.",
+      "Implemented and integrated internal company API systems, enabling reliable data synchronization across multiple core banking and insurance services.",
+      "Collaborated closely with Business Analysts (BA) and QA teams; served as technical reference point and mentor for new team members.",
+      "Conducted automated/manual unit testing and wrote rigorous Apex test classes to guarantee high code coverage and deployment readiness.",
+      "Enforced code quality standards by conducting peer code reviews, refactoring legacy codebases, and managing GitHub Pull Requests for zero-downtime production releases.",
+    ],
+    technologies: [
+      "C# (.NET Core)",
+      "Salesforce Apex",
+      "LWC",
+      "React.js",
+      "Express.js",
+      "SQL Server",
+      "PostgreSQL",
+      "REST API",
+      "Git/GitHub",
+    ],
+  },
+  {
+    company: "Freelance Software & Machine Learning Engineer",
+    location: "Surabaya, Indonesia",
+    role: "Freelance Software & ML Engineer",
+    period: "Mar 2021 – Apr 2023",
+    badge: "Self-Employed",
+    type: "Consulting & ML Engineering",
+    description:
+      "Delivered custom end-to-end software solutions, Machine Learning, Deep Learning, and NLP analytical tools for diverse external clients and academic research projects.",
+    achievements: [
+      "Engineered automated Python data collection pipelines using Selenium to scrape web data, building custom cleaning logic to filter noise and spam.",
+      "Built time-series forecasting models to analyze and predict financial exchange rate trends (USD/IDR) using deep learning algorithms.",
+      "Developed NLP text classification tools and custom data pipelines to analyze sentiment and filter irrelevant attributes.",
+      "Architected and maintained web applications using Python (Flask) and PHP (Laravel & CodeIgniter 3) with secure relational databases.",
+    ],
+    technologies: [
+      "Python",
+      "FastAPI / Flask",
+      "Selenium",
+      "TensorFlow",
+      "Time-Series ML",
+      "NLP",
+      "MySQL",
+      "PHP",
+    ],
+  },
+  {
+    company: "SMA Negeri 19 Surabaya",
+    location: "Surabaya, Indonesia",
+    role: "Web Developer Internship",
+    period: "Aug 2019 – Oct 2020",
+    badge: "Internship",
+    type: "Institutional Systems",
+    description:
+      "Managed the complete Software Development Life Cycle (SDLC) from initial requirement analysis to successful delivery of core administrative web platforms.",
+    achievements: [
+      "Built two core full-stack web applications from scratch: a Performance Evaluation System to digitize paper appraisals and an Internal Resource Booking portal.",
+      "Developed full-stack web applications using JavaScript, jQuery, CSS, and PHP with CodeIgniter 3 framework.",
+      "Executed comprehensive application testing, debugging, and database schema validation to ensure stability before institutional deployment.",
+      "Assisted internal IT support with local network configurations, switches, and server troubleshooting.",
+    ],
+    technologies: [
+      "PHP",
+      "CodeIgniter 3",
+      "JavaScript",
+      "MySQL",
+      "Bootstrap",
+      "Networking",
+    ],
+  },
+];
+
+/**
+ * Featured Projects
+ * Tambahkan atau modifikasi project di sini dengan mudah!
+ */
+export const projects = [
+  {
+    id: "moneymate",
+    title: "MoneyMate",
+    subtitle: "Self-Hosted CI/CD & AI LLM Personal Finance Microservice",
+    category: "fullstack",
+    featured: true,
+    badge: "Microservice Architecture",
+    description:
+      "A personal finance microservice application integrated with Gemini AI for intelligent receipt scanning, semantic caching, and real-time expense analytics. Engineered with clean separation between core API and AI worker services.",
+    keyFeatures: [
+      "Multi-service architecture: Core API (.NET Core) + AI Service (Python FastAPI)",
+      "Gemini AI integration for automatic invoice and receipt OCR extraction",
+      "Semantic caching via vector embeddings to minimize AI token usage",
+      "Fully containerized with Docker and deployed using self-hosted automated CI/CD pipelines",
+    ],
+    techStack: [
+      ".NET Core",
+      "Python FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "GitHub Actions",
+      "Gemini AI",
+    ],
+    links: {
+      github: "https://github.com/yazid29",
+      demo: "https://moneymate.semicolon.my.id/", // Tautan baru ditambahkan di sini
+    },
+    hasDetails: true,
+    screenshots: moneyMateScreenshots,
+    videoUrl: null, // Siap disisipkan file video MP4 atau tautan video singkat
+  },
+  {
+    id: "enterprise-crm",
+    title: "Salesforce CRM & Business Integrations",
+    subtitle: "Core Systems for Financial & Insurance Sectors (MII Experience)",
+    category: "salesforce",
+    featured: true,
+    badge: "Enterprise Scale",
+    description:
+      "Maintained robust enterprise-grade applications and delivered core Salesforce CRM solutions to optimize complex business processes for major banking and insurance institutions.",
+    keyFeatures: [
+      "Developed secure RESTful APIs and backend logic utilizing Salesforce Apex (OOP), Triggers, and Flows",
+      "Built scalable frontend user interfaces using Lightning Web Components (LWC)",
+      "Authored rigorous Apex test classes to ensure deployment readiness and high code coverage",
+      "Managed version control via GitHub, enforcing code quality through peer reviews and PR management",
+    ],
+    techStack: [
+      "Salesforce Apex",
+      "LWC",
+      "Salesforce Flows",
+      "JavaScript",
+      "REST API",
+      "GitHub",
+    ],
+    links: {
+      github: "https://github.com/yazid29",
+    },
+    hasDetails: false,
+    screenshots: [],
+    videoUrl: null,
+  },
+  {
+    id: "pmis",
+    title: "PMIS - Project Management Information System",
+    subtitle: "Vendor Management Platform for Indosat Ooredoo Hutchison (IOH)",
+    category: "fullstack",
+    featured: true,
+    badge: "Microservice Architecture",
+    description:
+      "A scalable microservices-based project management application developed for vendors of PT Indosat Ooredoo Hutchison to track project milestones, document submissions, and approval workflows.",
+    keyFeatures: [
+      "Engineered backend microservices and RESTful API systems using Express.js (Node.js)",
+      "Built dynamic, scalable frontend user interfaces using React.js",
+      "Implemented role-based access control (RBAC) and optimized PostgreSQL relational database schemas",
+      "Delivered high-performance API systems to handle complex telecommunications data workflows",
+    ],
+    techStack: [
+      "React.js",
+      "Express.js",
+      "Node.js",
+      "JavaScript",
+      "PostgreSQL",
+      "REST API",
+    ],
+    links: {
+      github: "https://github.com/yazid29",
+    },
+    hasDetails: false,
+    screenshots: [],
+    videoUrl: null,
+  },
+  {
+    id: "forecasting-nlp",
+    title: "Financial Time-Series Forecasting & NLP",
+    subtitle:
+      "Automated Data Crawling, Deep Learning & Sentiment Classification",
+    category: "ai-data",
+    featured: false, // Digeser ke false agar portofolio utama fokus ke Backend/Enterprise
+    badge: "Machine Learning",
+    description:
+      "Custom analytical tools built for independent clients to predict currency exchange rate trends (USD/IDR) and classify Indonesian social media content for sentiment and sarcasm detection.",
+    keyFeatures: [
+      "Engineered automated web data collection pipelines using Selenium with noise filtering",
+      "Developed time-series deep learning forecasting models evaluating historical macroeconomic trends",
+      "Implemented an NLP text classification engine with custom semantic preprocessing",
+      "Built an interactive Flask web dashboard for real-time inference visualization",
+    ],
+    techStack: ["Python", "Selenium", "TensorFlow", "NLP", "Flask", "MySQL"],
+    links: {
+      github: "https://github.com/yazid29",
+    },
+  },
+  {
+    id: "evora",
+    title: "EVORA - Event Management Platform",
+    subtitle: "Metrodata Full-Stack .NET Bootcamp Final Project",
+    category: "fullstack",
+    featured: false,
+    badge: "Bootcamp",
+    description:
+      "An end-to-end event organizer web application allowing administrators and attendees to manage events, ticket bookings, and attendee rosters with secure authentication.",
+    keyFeatures: [
+      "Built with ASP.NET Core Web API following Clean Architecture and Repository Pattern",
+      "Secure token-based authentication (JWT) and role-based permissions",
+      "Relational data model with Entity Framework Core migrations",
+    ],
+    techStack: [".NET Core", "C#", "SQL Server", "JavaScript", "REST API"],
+    links: {
+      github: "https://github.com/yazid29",
+    },
+  },
+  {
+    id: "employee-assessment",
+    title: "Institutional Appraisal & Booking Portal",
+    subtitle: "Digitizing Paper Workflows for SMAN 19 Surabaya",
+    category: "fullstack",
+    featured: false,
+    badge: "Internship Project", // Diubah dari "Production Intern" agar lebih umum dipahami
+    description:
+      "Full-stack institutional web application that replaced legacy paper-based employee appraisals and created a digitized agenda & resource booking schedule.",
+    keyFeatures: [
+      "Digitized appraisal scoring matrices and automated weighted evaluation scores",
+      "Built a calendar-based resource booking system preventing schedule conflicts",
+      "Delivered end-to-end SDLC from requirement gathering to on-premise deployment",
+    ],
+    techStack: ["PHP", "CodeIgniter 3", "MySQL", "JavaScript", "Bootstrap"],
+    links: {
+      github: "https://github.com/yazid29",
+    },
+  },
+];
+
+/**
+ * Certifications & Training
+ */
+export const certifications = [
+  {
+    title: "Full-Stack Developer Bootcamp (.NET)",
+    issuer: "METRODATA",
+    date: "November 2023",
+    credentialId: "1957065840-268/FGA/BLSDM.Kominfo/2023",
+    badge: ".NET Enterprise",
+    icon: "Code",
+  },
+  {
+    title: "Cyber Novice Ethical Hacking",
+    issuer: "EC-COUNCIL",
+    date: "June 2023",
+    credentialId: "1956527840-478/FGA/BLSDM.Kominfo/2023",
+    badge: "Security",
+    icon: "ShieldCheck",
+  },
+  {
+    title: "Big Data using Python",
+    issuer: "CISCO",
+    date: "October 2021",
+    credentialId: "01123956151-94/DTS/BLSDM.KOMINFO/10/2021",
+    badge: "Data & Python",
+    icon: "Binary",
+  },
+  {
+    title: "DevOps Series: Linux & Networking",
+    issuer: "DevOps Fundamentals",
+    date: "August 2024",
+    credentialId: "Linux Commands, Package Mgmt & Networking Essentials",
+    badge: "Cloud / DevOps",
+    icon: "Terminal",
+  },
+];
+
+/**
+ * Education
+ */
+export const education = {
+  degree: "Bachelor of Information Technology (S.Kom.)",
+  university: "Trunojoyo University Madura",
+  period: "August 2016 – February 2023",
+  gpa: "3.41 / 4.00",
+  highlights: [
+    "Focused on Software Engineering, Database Systems, and Machine Learning.",
+    "Undergraduate thesis focused on Natural Language Processing (NLP) deep learning classification.",
+  ],
+};

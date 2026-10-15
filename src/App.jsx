@@ -1,28 +1,31 @@
-import Navbar from './components/Navbar.jsx'
-import Hero from './components/Hero.jsx'
-import About from './components/About.jsx'
-import Skill from './components/Skill.jsx'
-import Experience from './components/Experience.jsx'
-import Project from './components/Project.jsx'
-import Contact from './components/Contact.jsx'
-import Footer from './components/Footer.jsx'
-function App() {
-  return (
-    <>
-      <div>
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Skill />
-            <Experience />
-            <Project />
-            <Contact/>
-            <Footer/>
-          </main>
-      </div>
-    </>
-  )
-}
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import ProfileImpact from "./components/ProfileImpact";
+import TechStack from "./components/TechStack";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+// import Certifications from "./components/Certifications";
+import Footer from "./components/Footer";
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-[#09100b] text-[#f3f4f6] flex flex-col font-sans selection:bg-[#388562]/40 selection:text-white overflow-x-hidden">
+      {/* Floating Header */}
+      <Navbar />
+
+      {/* Main Page Flow */}
+      <main className="flex-1 w-full overflow-x-hidden">
+        <Hero />
+        <ProfileImpact />
+        <TechStack />
+        <Experience />
+        <Projects />
+        {/* <Certifications /> */}
+      </main>
+
+      {/* Technical Footer */}
+      <Footer />
+    </div>
+  );
+}

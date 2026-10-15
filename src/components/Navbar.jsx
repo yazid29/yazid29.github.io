@@ -5,8 +5,7 @@ import { personalInfo } from "../data/portfolioData";
 
 const NAV_ITEMS = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "services", label: "Services" },
+  { id: "about", label: "Profile & Impact" },
   { id: "skills", label: "Tech Stack" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },

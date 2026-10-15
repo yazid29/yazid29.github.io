@@ -16,7 +16,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-16 md:pb-24 lg:pt-20 lg:pb-28 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
+      className="relative pt-4 pb-16 sm:pt-8 sm:pb-20 md:pt-8 md:pb-24 lg:pt-20 lg:pb-28 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

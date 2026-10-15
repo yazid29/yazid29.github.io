@@ -1,8 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import WhatIDo from "./components/WhatIDo";
+import ProfileImpact from "./components/ProfileImpact";
 import TechStack from "./components/TechStack";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
@@ -19,8 +18,7 @@ export default function App() {
       {/* Main Page Flow */}
       <main className="flex-1 w-full overflow-x-hidden">
         <Hero />
-        <About />
-        <WhatIDo />
+        <ProfileImpact />
         <TechStack />
         <Experience />
         <Projects />

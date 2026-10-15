@@ -13,7 +13,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-24 md:py-32 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
+      className="relative py-16 md:py-16 bg-[#09100b] border-t border-[#162e20] overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -48,7 +48,7 @@ export default function Experience() {
               className="relative group"
             >
               {/* Timeline Node Dot */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-[#09100b] border-2 border-[#52b788] flex items-center justify-center group-hover:scale-110 transition-all duration-200 shadow-md">
+              <div className="absolute -left-7.75 sm:-left-9.75 top-1.5 w-6 h-6 rounded-full bg-[#09100b] border-2 border-[#52b788] flex items-center justify-center group-hover:scale-110 transition-all duration-200 shadow-md">
                 <span className="w-2 h-2 rounded-full bg-[#52b788]"></span>
               </div>
 

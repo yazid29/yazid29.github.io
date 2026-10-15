@@ -55,7 +55,7 @@ export const personalInfo = {
     {
       value: "3+",
       label: "Years Experience",
-      description: "Delivering enterprise-scale software",
+      description: "Delivering software",
     },
     {
       value: "3+",
@@ -147,6 +147,50 @@ jobs:
 ];
 
 /**
+ * Engineering Profile & Impact
+ */
+export const engineeringImpact = {
+  sectionTitle: "Engineering Profile & Impact",
+  badge: "Engineering Profile & Impact",
+  narrative:
+    "Software Engineer with over 3 years of experience delivering robust enterprise applications across banking, insurance, and telecommunications sectors. Strong background in full-stack architecture, backend engineering (.NET, Python, JavaScript), and CRM Salesforce ecosystem, with an emphasis on clean architecture and system scalability. Complements core software development with DevOps practices, CI/CD automation, and containerization to ensure reliable production deployments and seamless software delivery.",
+  achievementCards: [
+    {
+      id: "backend-apis",
+      iconName: "Server",
+      title: "Backend & API Development",
+      text: "Delivered backend business logic and RESTful APIs for major telecommunications and financial clients using JavaScript and enterprise platforms Salesforce, complemented by C# (.NET Core) for independent microservice projects.",
+      badge: "Core Backend",
+      tech: "JavaScript · .NET Core · REST APIs",
+    },
+    {
+      id: "cicd-automation",
+      iconName: "GitBranch",
+      title: "Version Control & CI/CD",
+      text: "Collaborated within enterprise CI/CD workflows using Git, managing pull requests, and resolving pipeline test failures. Additionally, configured Docker containerization and GitHub Actions for personal projects.",
+      badge: "DevOps & Collaboration",
+      tech: "Git · Docker · GitHub Actions",
+    },
+    {
+      id: "data-ml",
+      iconName: "BrainCircuit",
+      title: "Data Pipelines & Machine Learning",
+      text: "Engineered automated Python data extraction pipelines using Selenium and developed custom NLP and time-series forecasting models for analytical research projects.",
+      badge: "Data & ML",
+      tech: "Python · Machine Learning · NLP",
+    },
+    {
+      id: "fullstack-delivery",
+      iconName: "Layers",
+      title: "Full-Stack System",
+      text: "Delivered complete end-to-end web applications across the full SDLC. Built dynamic frontend interfaces using React.js, seamlessly connected to robust backend systems by Express.js and .NET.",
+      badge: "Full-Stack",
+      tech: "React.js · Express.js · SQL",
+    },
+  ],
+};
+
+/**
  * 4 Pilar Utama ("What I Do")
  */
 export const whatIDo = [
@@ -224,70 +268,84 @@ export const techStackCategories = [
 export const techStack = [
   // Backend & Architecture
   {
-    name: "C# / .NET Core",
+    name: "JavaScript / Node.js",
     category: "backend",
-    tag: "Primary Enterprise",
-    icon: "SiDotnet",
-    level: "Advanced",
-  },
-  {
-    name: "Python",
-    category: "backend",
-    tag: "FastAPI / Scripts",
-    icon: "SiPython",
-    level: "Advanced",
-  },
-  {
-    name: "FastAPI",
-    category: "backend",
-    tag: "Async Microservice",
-    icon: "SiFastapi",
-    level: "Proficient",
-  },
-  {
-    name: "Express.js",
-    category: "backend",
-    tag: "Node.js REST APIs",
-    icon: "SiExpress",
-    level: "Proficient",
-  },
-  {
-    name: "RESTful APIs",
-    category: "backend",
-    tag: "Architecture & Security",
-    icon: "SiPostman",
-    level: "Advanced",
-  },
-  {
-    name: "Clean Architecture",
-    category: "backend",
-    tag: "SOLID / DI Pattern",
-    icon: "Server",
-    level: "Advanced",
-  },
-
-  // Frontend & CRM
-  {
-    name: "React.js",
-    category: "frontend-crm",
-    tag: "UI Development",
-    icon: "SiReact",
-    level: "Advanced",
-  },
-  {
-    name: "JavaScript (ES6+)",
-    category: "frontend-crm",
     tag: "Core Language",
     icon: "SiJavascript",
     level: "Advanced",
   },
   {
-    name: "TypeScript",
-    category: "frontend-crm",
-    tag: "Type-Safe Frontend",
-    icon: "SiTypescript",
+    name: "Express.js",
+    category: "backend",
+    tag: "REST APIs",
+    icon: "SiExpress",
     level: "Proficient",
   },
+  {
+    name: "Python",
+    category: "backend",
+    tag: "Scripts & Automation",
+    icon: "SiPython",
+    level: "Proficient",
+  },
+  {
+    name: "PHP",
+    category: "backend",
+    tag: "Web Development",
+    icon: "SiPhp",
+    level: "Proficient",
+  },
+  {
+    name: "Laravel",
+    category: "backend",
+    tag: "MVC Framework",
+    icon: "SiLaravel",
+    level: "Proficient",
+  },
+  {
+    name: "C# / .NET Core",
+    category: "backend",
+    tag: "Enterprise Backend",
+    icon: "SiDotnet",
+    level: "Intermediate",
+  },
+  {
+    name: "Flask",
+    category: "backend",
+    tag: "Microframework",
+    icon: "SiFlask",
+    level: "Intermediate",
+  },
+  {
+    name: "FastAPI",
+    category: "backend",
+    tag: "Async Microservices",
+    icon: "SiFastapi",
+    level: "Intermediate",
+  },
+  {
+    name: "Java",
+    category: "backend",
+    tag: "Core Concepts",
+    icon: "FaJava", // Atau 'SiJava' tergantung library icon Anda
+    level: "Familiar",
+  },
+  {
+    name: "Spring Boot",
+    category: "backend",
+    tag: "Backend Framework",
+    icon: "SiSpringboot",
+    level: "Familiar",
+  },
+  {
+    name: "CodeIgniter",
+    category: "backend",
+    tag: "Legacy Projects",
+    icon: "SiCodeigniter",
+    level: "Familiar",
+  },
+
+  // Frontend & CRM
   {
     name: "Salesforce APEX",
     category: "frontend-crm",
@@ -296,76 +354,62 @@ export const techStack = [
     level: "Advanced",
   },
   {
-    name: "Lightning Components (LWC)",
+    name: "Salesforce LWC & Flows",
     category: "frontend-crm",
-    tag: "Salesforce UI",
+    tag: "Enterprise UI & Auto",
     icon: "SiSalesforce",
     level: "Advanced",
   },
   {
-    name: "Salesforce Flows",
+    name: "React.js",
     category: "frontend-crm",
-    tag: "Process Automation",
-    icon: "Workflow",
-    level: "Advanced",
+    tag: "UI Development",
+    icon: "SiReact",
+    level: "Proficient",
   },
   {
     name: "Tailwind CSS",
     category: "frontend-crm",
     tag: "Utility Styling",
     icon: "SiTailwindcss",
-    level: "Advanced",
+    level: "Proficient",
   },
+  // {
+  //   name: "TypeScript",
+  //   category: "frontend-crm",
+  //   tag: "Type-Safe Frontend",
+  //   icon: "SiTypescript",
+  //   level: "Intermediate",
+  // },
 
-  // Database & Storage
+  // Database & Data
+  {
+    name: "MySQL",
+    category: "database",
+    tag: "Relational DB",
+    icon: "SiMysql",
+    level: "Proficient",
+  },
   {
     name: "PostgreSQL",
     category: "database",
-    tag: "Relational Database",
+    tag: "Relational DB",
     icon: "SiPostgresql",
-    level: "Advanced",
+    level: "Proficient",
   },
   {
     name: "SQL Server",
     category: "database",
     tag: "Enterprise T-SQL",
-    icon: "Database",
-    level: "Advanced",
-  },
-  {
-    name: "MySQL",
-    category: "database",
-    tag: "Relational Storage",
-    icon: "SiMysql",
-    level: "Proficient",
-  },
-  {
-    name: "Data Pipelines",
-    category: "database",
-    tag: "ETL & Cleaning",
-    icon: "Database",
-    level: "Proficient",
+    icon: "Database", // Gunakan lucide-react icon generic jika tidak ada logo
+    level: "Intermediate",
   },
 
   // DevOps & Infrastructure
   {
-    name: "Docker",
-    category: "devops",
-    tag: "Containerization",
-    icon: "SiDocker",
-    level: "Advanced",
-  },
-  {
-    name: "GitHub Actions",
-    category: "devops",
-    tag: "Automated CI/CD",
-    icon: "SiGithubactions",
-    level: "Proficient",
-  },
-  {
     name: "Git & GitHub",
     category: "devops",
-    tag: "Version Control / PR",
+    tag: "Version Control",
     icon: "SiGit",
     level: "Advanced",
   },
@@ -374,44 +418,44 @@ export const techStack = [
     category: "devops",
     tag: "Server Administration",
     icon: "SiLinux",
-    level: "Proficient",
+    level: "Intermediate",
   },
   {
-    name: "Nginx",
+    name: "Docker",
     category: "devops",
-    tag: "Reverse Proxy",
-    icon: "SiNginx",
+    tag: "Container Deployment",
+    icon: "SiDocker",
+    level: "Intermediate",
+  },
+  {
+    name: "GitHub Actions",
+    category: "devops",
+    tag: "CI/CD Pipelines",
+    icon: "SiGithubactions",
     level: "Intermediate",
   },
 
-  // AI & Machine Learning
+  // AI & Automation
+  // {
+  //   name: "Selenium",
+  //   category: "ai",
+  //   tag: "Web Data Scraping",
+  //   icon: "SiSelenium",
+  //   level: "Proficient",
+  // },
   {
     name: "Gemini AI LLM",
     category: "ai",
     tag: "Generative AI API",
-    icon: "SiGoogle",
-    level: "Proficient",
+    icon: "SiGooglegemini",
+    level: "Intermediate",
   },
   {
     name: "Vector Embeddings",
     category: "ai",
     tag: "Semantic Caching",
-    icon: "BrainCircuit",
-    level: "Proficient",
-  },
-  {
-    name: "Selenium",
-    category: "ai",
-    tag: "Web Data Crawling",
-    icon: "SiSelenium",
-    level: "Advanced",
-  },
-  {
-    name: "NLP & ML Models",
-    category: "ai",
-    tag: "Text & Time-Series",
-    icon: "SiTensorflow",
-    level: "Proficient",
+    icon: "BrainCircuit", // Lucide react icon
+    level: "Intermediate",
   },
 ];
 

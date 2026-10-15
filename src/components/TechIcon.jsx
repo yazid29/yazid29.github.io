@@ -11,6 +11,10 @@ import {
   SiLinux,
   SiNginx,
   SiFastapi,
+  SiFlask,
+  SiLaravel,
+  SiSpringboot,
+  SiCodeigniter,
   SiExpress,
   SiJavascript,
   SiTypescript,
@@ -19,9 +23,12 @@ import {
   SiSelenium,
   SiTensorflow,
   SiGoogle,
+  SiGooglegemini,
   SiPostman,
-  SiPhp
+  SiPhp,
+  SiNodedotjs
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
 import {
   Server,
@@ -51,14 +58,21 @@ const ICON_MAP = {
   SiLinux: { comp: SiLinux, color: "text-[#fcc624]" },
   SiNginx: { comp: SiNginx, color: "text-[#009639]" },
   SiFastapi: { comp: SiFastapi, color: "text-[#009688]" },
+  SiFlask: { comp: SiFlask, color: "text-[#e2e8f0]" },
+  SiLaravel: { comp: SiLaravel, color: "text-[#ff2d20]" },
+  SiSpringboot: { comp: SiSpringboot, color: "text-[#6db33f]" },
+  SiCodeigniter: { comp: SiCodeigniter, color: "text-[#ee4326]" },
+  FaJava: { comp: FaJava, color: "text-[#ea2d2e]" },
   SiExpress: { comp: SiExpress, color: "text-[#c2d1c7]" },
   SiJavascript: { comp: SiJavascript, color: "text-[#f7df1e]" },
+  SiNodedotjs: { comp: SiNodedotjs, color: "text-[#5fa04e]" },
   SiTypescript: { comp: SiTypescript, color: "text-[#3178c6]" },
   SiTailwindcss: { comp: SiTailwindcss, color: "text-[#38bdf8]" },
   SiSalesforce: { comp: SiSalesforce, color: "text-[#00a1e0]" },
   SiSelenium: { comp: SiSelenium, color: "text-[#43b02a]" },
   SiTensorflow: { comp: SiTensorflow, color: "text-[#ff6f00]" },
   SiGoogle: { comp: SiGoogle, color: "text-[#4285f4]" },
+  SiGooglegemini: { comp: SiGooglegemini, color: "text-[#8e75ff]" },
   SiPostman: { comp: SiPostman, color: "text-[#ff6c37]" },
   SiPhp: { comp: SiPhp, color: "text-[#777bb4]" },
 

@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-0 lg:min-h-screen pt-20 pb-8 sm:pt-24 sm:pb-12 md:pt-32 md:pb-16 lg:pt-36 lg:pb-24 flex items-center justify-center overflow-x-hidden bg-[#09100b] bg-tech-grid"
+      className="relative min-h-0 lg:min-h-screen pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-36 lg:pb-4 flex items-center justify-center overflow-x-hidden bg-[#09100b] bg-tech-grid"
     >
       {/* Subtle organic forest light vignette */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-linear-to-b from-[#1b3b2b]/15 to-transparent pointer-events-none -z-10" />
@@ -46,32 +46,17 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="space-y-5 sm:space-y-6 text-left"
+              className="space-y-8 text-left"
             >
-              {/* Status Pill Badge */}
-              {/* {personalInfo.statusActive && (
-                <div className="flex">
-                  <div className="inline-flex max-w-full items-center gap-2 sm:gap-2.5 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-[#0e1d15] border border-[#234b34] text-[#52b788] text-[11px] sm:text-xs font-mono font-medium shadow-sm">
-                    <span className="relative flex h-2 w-2 shrink-0">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#52b788] opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#409870]"></span>
-                    </span>
-                    <span className="wrap-break-word">
-                      {personalInfo.statusBadge}
-                    </span>
-                  </div>
-                </div>
-              )} */}
-
               {/* Greeting & Bold Off-White Headline */}
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 <p className="text-[#8fa596] font-mono text-xs sm:text-sm tracking-wide">
                   👋 {personalInfo.bioGreeting}
                 </p>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-extrabold tracking-tight text-[#f3f4f6] leading-[1.14] sm:leading-[1.08] font-heading wrap-break-word">
-                  {personalInfo.heroTitlePrefix || personalInfo.role || "Backend Architecture &"}{" "}
+                  {personalInfo.heroTitlePrefix || personalInfo.role || "Software Engineer &"}{" "}
                   <span className="text-[#52b788]">
-                    {personalInfo.heroTitleHighlight || (personalInfo.headline !== personalInfo.role ? personalInfo.headline : "Enterprise Solutions")}
+                    {personalInfo.heroTitleHighlight || "Enterprise Solutions"}
                   </span>
                 </h1>
               </div>
@@ -81,88 +66,70 @@ export default function Hero() {
                 {personalInfo.bioSubheadline}
               </p>
 
-              {/* Tech Pillar Quick Tags */}
-              {/* <div className="flex flex-wrap gap-2.5 sm:gap-3 pt-1">
-                {personalInfo.pilarTech.map((pill, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2.5 py-1 sm:px-3 sm:py-1 rounded-md bg-[#0f2017] border border-[#1e3b2b] text-[10px] sm:text-[11px] font-mono text-[#c2d1c7] flex items-center gap-1.5 shrink-0"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#52b788] shrink-0"></span>
-                    {pill}
-                  </span>
-                ))}
-              </div> */}
-
-              {/* Stats Highlights (3 Cards) */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-3.5 pt-1 w-full">
+              {/* Stats Highlights (3 Cards): grid-cols-1 on mobile, grid-cols-3 on tablet/desktop */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
                 {personalInfo.stats.map((stat, idx) => (
                   <div
                     key={idx}
-                    className="p-2.5 sm:p-3.5 rounded-xl bg-[#0f2017] border border-[#1e3b2b] hover:border-[#388562]/50 transition-all text-left group shadow-md"
+                    className="p-4 rounded-xl bg-[#0f2017] border border-[#1e3b2b] hover:border-[#388562]/50 transition-all text-left group shadow-md"
                   >
-                    <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#f3f4f6] font-mono group-hover:text-[#52b788] transition-colors leading-none mb-1">
-                      {stat.value}
+                    <div className="flex items-center gap-2">
+                      <div className="text-2xl sm:text-2xl lg:text-3xl font-extrabold text-[#f3f4f6] font-mono group-hover:text-[#52b788] transition-colors leading-none mb-1.5">
+                        {stat.value}
+                      </div>
+                      <div className="text-xs font-bold text-[#e2e8f0] font-heading leading-tight">
+                        {stat.label}
+                      </div>
                     </div>
-                    <div className="text-[10px] sm:text-xs font-bold text-[#e2e8f0] font-heading leading-tight">
-                      {stat.label}
-                    </div>
-                    <div className="text-[9px] sm:text-[10px] text-[#8fa596] font-mono mt-0.5 line-clamp-1 hidden sm:block">
+                    <div className="text-[11px] text-[#8fa596] font-mono mt-1">
                       {stat.description}
                     </div>
                   </div>
                 ))}
               </div>
 
+              {/* Action Buttons: Stack on mobile, row on tablet/desktop */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  href="#projects"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#2d6a4f] hover:bg-[#388562] text-[#f3f4f6] font-bold text-sm shadow-lg shadow-[#1b3b2b]/40 transition-all flex items-center justify-center gap-2 group cursor-pointer text-center"
+                >
+                  <span>View Projects</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  href="#contact"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0f2017] hover:bg-[#152e22] text-[#f3f4f6] hover:text-white border border-[#234b34] text-sm font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
+                >
+                  <Mail className="w-4 h-4 text-[#52b788]" />
+                  <span>Get In Touch</span>
+                </motion.a>
+              </div>
 
-
-              {/* Direct Links & Location */}
-              <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6 text-[#8fa596] text-xs border-t border-[#1b3627]">
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1 w-full sm:w-auto">
-                  <motion.a
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    href="#projects"
-                    className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#2d6a4f] hover:bg-[#388562] text-[#f3f4f6] font-bold text-sm shadow-lg shadow-[#1b3b2b]/40 transition-all flex items-center justify-center gap-2 group cursor-pointer text-center"
-                  >
-                    <span>View Projects</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    href="#contact"
-                    className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#0f2017] hover:bg-[#152e22] text-[#f3f4f6] hover:text-white border border-[#234b34] text-sm font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
-                  >
-                    <Mail className="w-4 h-4 text-[#52b788]" />
-                    <span>Get In Touch</span>
-                  </motion.a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <a
-                    href={personalInfo.socials.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[#52b788] transition-colors p-2 rounded-lg bg-[#0f2017] border border-[#1e3b2b]"
-                    aria-label="GitHub Profile"
-                  >
-                    <SiGithub className="w-4 h-4 text-[#c2d1c7]" />
-                  </a>
-                  <a
-                    href={personalInfo.socials.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[#52b788] transition-colors p-2 rounded-lg bg-[#0f2017] border border-[#1e3b2b]"
-                    aria-label="LinkedIn Profile"
-                  >
-                    <SiLinkedin className="w-4 h-4 text-[#c2d1c7]" />
-                  </a>
-                </div>
-                {/* <span className="hidden sm:inline-block w-px h-4 bg-[#1b3627]"></span>
-                <span className="font-mono text-[#8fa596] text-[11px] sm:text-xs">
-                  📍 {personalInfo.location}
-                </span> */}
+              {/* Direct Social Links */}
+              <div className="pt-2 flex items-center gap-3 text-[#8fa596] text-xs border-t border-[#1b3627]">
+                <a
+                  href={personalInfo.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#52b788] transition-colors p-2.5 rounded-lg bg-[#0f2017] border border-[#1e3b2b]"
+                  aria-label="GitHub Profile"
+                >
+                  <SiGithub className="w-4 h-4 text-[#c2d1c7]" />
+                </a>
+                <a
+                  href={personalInfo.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#52b788] transition-colors p-2.5 rounded-lg bg-[#0f2017] border border-[#1e3b2b]"
+                  aria-label="LinkedIn Profile"
+                >
+                  <SiLinkedin className="w-4 h-4 text-[#c2d1c7]" />
+                </a>
               </div>
             </motion.div>
           </div>

@@ -26,8 +26,8 @@ export default function Projects() {
     selectedCategory === "featured"
       ? projects.filter((p) => p.featured)
       : selectedCategory === "all"
-      ? projects
-      : projects.filter((p) => p.category === selectedCategory);
+        ? projects
+        : projects.filter((p) => p.category === selectedCategory);
 
   return (
     <section
@@ -160,16 +160,18 @@ export default function Projects() {
 
                   {/* Action Buttons */}
                   <div className="flex items-center justify-between pt-1">
-                    <button
+                    <div></div>
+                    {/* <button
                       onClick={() => setActiveModalProject(project)}
                       className="text-xs font-mono text-[#52b788] hover:text-[#80d4a6] font-semibold flex items-center gap-1 transition-colors cursor-pointer"
                     >
                       <span>Architecture Details</span>
                       <span>&rarr;</span>
-                    </button>
+                    </button> */}
 
                     <div className="flex items-center gap-2">
-                      {project.links?.github && (
+                      <div></div>
+                      {/* {project.links?.github && (
                         <a
                           href={project.links.github}
                           target="_blank"
@@ -179,16 +181,16 @@ export default function Projects() {
                         >
                           <SiGithub className="w-3.5 h-3.5" />
                         </a>
-                      )}
+                      )} */}
                       {project.links?.demo && (
                         <a
                           href={project.links.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 rounded-lg bg-[#13281d] hover:bg-[#1a3828] text-[#c2d1c7] hover:text-[#52b788] transition-colors border border-[#1e3b2b]"
+                          className="flex items-center gap-2 p-1.5 rounded-lg bg-[#13281d] hover:bg-[#1a3828] text-[#c2d1c7] hover:text-[#52b788] transition-colors border border-[#1e3b2b]"
                           title="View Demo"
                         >
-                          <ExternalLink className="w-3.5 h-3.5" />
+                          Visit <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       )}
                     </div>

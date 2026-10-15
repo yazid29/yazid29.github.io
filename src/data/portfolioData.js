@@ -465,7 +465,7 @@ export const techStack = [
 export const experiences = [
   {
     company: "PT Mitra Integrasi Informatika",
-    location: "Jakarta, Indonesia (Hybrid)",
+    location: "Jakarta, Indonesia (On-Site)",
     role: "Application Developer Jr.",
     period: "Sep 2023 – Present",
     badge: "Current Role",
@@ -579,7 +579,7 @@ export const projects = [
   },
   {
     id: "enterprise-crm",
-    title: "Enterprise CRM & Business Integrations",
+    title: "Salesforce CRM & Business Integrations",
     subtitle: "Core Systems for Financial & Insurance Sectors (MII Experience)",
     category: "salesforce",
     featured: true,
@@ -610,7 +610,7 @@ export const projects = [
     subtitle: "Vendor Management Platform for Indosat Ooredoo Hutchison (IOH)",
     category: "fullstack",
     featured: true,
-    badge: "Enterprise Scale",
+    badge: "Microservice Architecture",
     description:
       "A scalable microservices-based project management application developed for vendors of PT Indosat Ooredoo Hutchison to track project milestones, document submissions, and approval workflows.",
     keyFeatures: [

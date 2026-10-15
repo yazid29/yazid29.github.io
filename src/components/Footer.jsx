@@ -94,7 +94,7 @@ export default function Footer() {
                 {personalInfo.email}
               </h3>
               <p className="text-xs text-[#8fa596] mt-2">
-                Drop an email for inquiries, interviews, or project opportunities.
+                Drop an email for job or project opportunities.
               </p>
             </div>
 

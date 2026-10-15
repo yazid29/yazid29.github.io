@@ -104,7 +104,7 @@ export default function Navbar() {
         </nav>
 
         {/* Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* <div className="hidden sm:flex items-center gap-3">
           <a
             href={personalInfo.socials.github}
             target="_blank"
@@ -126,7 +126,7 @@ export default function Navbar() {
             <span>Let's Talk</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
-        </div>
+        </div> */}
 
         {/* Mobile Hamburger Button */}
         <button
